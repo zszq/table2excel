@@ -1,2 +1,6 @@
 # table2excel
-使用nodejs获取html文件中的table内容并转换成excel文件
+使用nodejs获取html文件中的table内容并转换成excel文件。
+
+需要转换的html文件放到data文件夹中，然后执行node命令运行start.js文件，转换完成后的excel在result文件夹中。
+
+要想支持在线html页面只需要使用一些库把页面加载下来然后用cheerio加载。

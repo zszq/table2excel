@@ -1,0 +1,3900 @@
+HTTP/1.1 200 OK
+Date: Wed, 26 Apr 2023 09:57:07 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Cache-Control: private
+vary: Accept-Encoding
+set-cookie: SOA.WebSite=EA4B0F2E287D9AF7AF9A5F96CBC131463EF873B60D3FD72E07E23794A5D320F9E155F1A35E5E88CB8BBAB557877192013D727E6339E27BE6AD96D3DD1094D688A8B7AF19C64E7489FCDADF6940334506F9CDF966F065D00719D8CE80A0A9330045DF7EF6BE1BB6C5C9ADE6CF02EA0DE8648667C9C4E575A6882A362E3EF6ED24E68C19CA76E289EE4339483CCD8B0A1DB1CC809B541CD811E4208E20A21E20E5; path=/; HttpOnly; SameSite=Lax
+x-aspnetmvc-version: 5.2
+x-aspnet-version: 4.0.30319
+x-powered-by: ASP.NET
+CF-Cache-Status: DYNAMIC
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=RMgtbdcf%2Fhp4BsXLr19PJG31EQAV4vIkFJZhgGI%2FCGuOFHoMnV%2BnRCafJrhtIqE8nXgrJXCHFydSx5dmxabxaAleEWXPlBM2EO9e9X8VbrU1lch9DLnQPyeeviUO0l7nuvz8ZdgO2%2FDcug%3D%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 7bddf591afdb18f0-SIN
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+Content-Length: 155190
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>出款管理</title>
+    <link href="/style/stylecss?v=FgtxhRcNx4VePzlWJcGDR-DA-4infB4I-gBoz4LmQto1" rel="stylesheet"/>
+<link href="/style/admin/css?v=LmhkICRSeF1Zx3MGauOQ5Ow7aDYVMWtwBqicTWvwk741" rel="stylesheet"/>
+
+    <script src="/bundles/jquery?v=84jPVsElpshPhhnrazGalF6xofB2x-MCYt7a9MMsgHM1"></script>
+
+    <script src="/bundles/jqueryval?v=7Sn5xO-3GWkjaclB7i_E6tXwHCz8kw0k_xfuwp9pBlc1"></script>
+
+    
+</head>
+<body id="body">
+
+    
+
+<link href="/Content/css/select2.min.css" rel="stylesheet"/>
+
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<style type="text/css">
+    .bottomNav {
+        z-index: 999;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        _position: absolute;
+        _top: expression_r(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight);
+        overflow: visible;
+    }
+</style>
+<style type="text/css">
+    .pop-box {
+        z-index: 9999; /*这个数值要足够大，才能够显示在最上层*/
+        margin-bottom: 3px;
+        display: none;
+        position: absolute;
+        background: #FFF;
+        border: solid 1px #6e8bde;
+    }
+
+        .pop-box h4 {
+            color: #FFF;
+            cursor: default;
+            height: 18px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: left;
+            padding-left: 8px;
+            padding-top: 4px;
+            padding-bottom: 2px;
+            background: url("../images/header_bg.gif") repeat-x 0 0;
+        }
+
+    .pop-box-body {
+        clear: both;
+        margin: 4px;
+        padding: 2px;
+    }
+
+    #VIPtable td {
+        text-align: center;
+    }
+</style>
+<div id="con_wrap" style="overflow:hidden">
+    <div class="" style="width:100% ; padding-top:-7px;">
+        <div class="input_002">出款管理</div>
+<form Id="form1" action="/Cash/Revenue_managementListOut" method="post">            <b>取款银行：</b>
+<select class="js-example-basic-single" id="BankTypes" name="BankTypes" style="width:150px"><option value="">请选择</option>
+<option value="中国建设银行">中国建设银行</option>
+<option value="中国工商银行">中国工商银行</option>
+<option value="中国农业银行">中国农业银行</option>
+<option value="中国邮政储蓄银行">中国邮政储蓄银行</option>
+<option value="中国银行">中国银行</option>
+<option value="中国招商银行">中国招商银行</option>
+<option value="交通银行">交通银行</option>
+<option value="中国民生银行">中国民生银行</option>
+<option value="中信银行">中信银行</option>
+<option value="兴业银行">兴业银行</option>
+<option value="上海浦东发展银行">上海浦东发展银行</option>
+<option value="平安银行">平安银行</option>
+<option value="华夏银行">华夏银行</option>
+<option value="广州银行">广州银行</option>
+<option value="广州农商银行">广州农商银行</option>
+<option value="顺德农商银行">顺德农商银行</option>
+<option value="北京银行">北京银行</option>
+<option value="杭州银行">杭州银行</option>
+<option value="温州银行">温州银行</option>
+<option value="上海农商银行">上海农商银行</option>
+<option value="中国光大银行">中国光大银行</option>
+<option value="渤海银行">渤海银行</option>
+<option value="浙商银行">浙商银行</option>
+<option value="晋商银行">晋商银行</option>
+<option value="汉口银行">汉口银行</option>
+<option value="上海银行">上海银行</option>
+<option value="广发银行">广发银行</option>
+<option value="深圳发展银行">深圳发展银行</option>
+<option value="东莞银行">东莞银行</option>
+<option value="宁波银行">宁波银行</option>
+<option value="南京银行">南京银行</option>
+<option value="北京农商银行">北京农商银行</option>
+<option value="重庆银行">重庆银行</option>
+<option value="广西农村信用社">广西农村信用社</option>
+<option value="吉林银行">吉林银行</option>
+<option value="江苏银行">江苏银行</option>
+<option value="成都银行">成都银行</option>
+<option value="尧都区农村信用联社">尧都区农村信用联社</option>
+<option value="浙江稠州商业银行">浙江稠州商业银行</option>
+<option value="珠海市农村信用合作联社">珠海市农村信用合作联社</option>
+<option value="财付通">财付通</option>
+<option value="桂林银行">桂林银行</option>
+<option value="重庆农村商业银行">重庆农村商业银行</option>
+<option value="徽商银行">徽商银行</option>
+<option value="长沙银行">长沙银行</option>
+<option value="浙江省农村信用社联合社">浙江省农村信用社联合社</option>
+<option value="中原银行">中原银行</option>
+<option value="广西北部湾银行">广西北部湾银行</option>
+<option value="贵州银行">贵州银行</option>
+<option value="盛京银行">盛京银行</option>
+<option value="重庆银行">重庆银行</option>
+<option value="贵阳银行">贵阳银行</option>
+<option value="葫芦岛银行">葫芦岛银行</option>
+<option value="莱商银行">莱商银行</option>
+<option value="广东华兴银行">广东华兴银行</option>
+<option value="南充银行">南充银行</option>
+<option value="宁夏银行">宁夏银行</option>
+<option value="锦州银行">锦州银行</option>
+<option value="广东农村信用社">广东农村信用社</option>
+<option value="农村信用社">农村信用社</option>
+<option value="朝阳银行">朝阳银行</option>
+<option value="河北银行">河北银行</option>
+<option value="南昌银行">南昌银行</option>
+<option value="威海银行">威海银行</option>
+<option value="哈尔滨银行">哈尔滨银行</option>
+<option value="赣州银行">赣州银行</option>
+<option value="甘肃银行">甘肃银行</option>
+<option value="恒丰银行">恒丰银行</option>
+<option value="沧州银行">沧州银行</option>
+<option value="柳州银行">柳州银行</option>
+<option value="泉州银行">泉州银行</option>
+<option value="韩亚银行">韩亚银行</option>
+<option value="厦门银行">厦门银行</option>
+<option value="昆仑银行">昆仑银行</option>
+<option value="济宁银行">济宁银行</option>
+<option value="日照银行">日照银行</option>
+<option value="临商银行">临商银行</option>
+<option value="齐商银行">齐商银行</option>
+<option value="威海市商业银行">威海市商业银行</option>
+<option value="青岛银行">青岛银行</option>
+<option value="厦门国际银行">厦门国际银行</option>
+<option value="云南省农村信用社">云南省农村信用社</option>
+<option value="天津银行">天津银行</option>
+<option value="邯郸银行">邯郸银行</option>
+<option value="郑州银行">郑州银行</option>
+<option value="河南省农村信用社">河南省农村信用社</option>
+<option value="甘肃省农村信用社联合社">甘肃省农村信用社联合社</option>
+<option value="江西银行">江西银行</option>
+<option value="承德银行">承德银行</option>
+<option value="云闪付">云闪付</option>
+<option value="京东">京东</option>
+<option value="备用">备用</option>
+<option value="龙江银行">龙江银行</option>
+<option value="民生银行">民生银行</option>
+<option value="浙江台州民泰银行">浙江台州民泰银行</option>
+<option value="民泰商业银行">民泰商业银行</option>
+<option value="海南银行">海南银行</option>
+<option value="西安银行">西安银行</option>
+<option value="鄞州银行">鄞州银行</option>
+<option value="齐鲁银行">齐鲁银行</option>
+<option value="东莞农村商业银行">东莞农村商业银行</option>
+<option value="泰隆银行">泰隆银行</option>
+<option value="瑞丰银行">瑞丰银行</option>
+<option value="佛山农商银行">佛山农商银行</option>
+<option value="广东省农村信用社联合社">广东省农村信用社联合社</option>
+<option value="武汉农商银行">武汉农商银行</option>
+<option value="龙江银行">龙江银行</option>
+<option value="洛阳银行">洛阳银行</option>
+<option value="贵州农信银行">贵州农信银行</option>
+<option value="渤海银行">渤海银行</option>
+<option value="曲靖市商业银行">曲靖市商业银行</option>
+<option value="遂宁银行">遂宁银行</option>
+<option value="长安银行">长安银行</option>
+<option value="四川农村信用社">四川农村信用社</option>
+<option value="乐山商业银行">乐山商业银行</option>
+<option value="天津农商银行">天津农商银行</option>
+<option value="丹东银行">丹东银行</option>
+<option value="江南农村商业银行">江南农村商业银行</option>
+<option value="四川天府银行">四川天府银行</option>
+<option value="深圳农村商业银行">深圳农村商业银行</option>
+<option value="重庆三峡银行">重庆三峡银行</option>
+<option value="农商银行">农商银行</option>
+<option value="宁夏黄河农村商业银行">宁夏黄河农村商业银行</option>
+<option value="兰州银行">兰州银行</option>
+<option value="辽阳银行">辽阳银行</option>
+<option value="湖南省农村信用社联合社">湖南省农村信用社联合社</option>
+<option value="九江银行">九江银行</option>
+<option value="支付宝转账">支付宝转账</option>
+<option value="微信转账">微信转账</option>
+<option value="支付宝">支付宝</option>
+<option value="微信">微信</option>
+<option value="CGPAY虚拟货币">CGPAY虚拟货币</option>
+<option value="USDT数字货币">USDT数字货币</option>
+<option value="支付宝网商银行">支付宝网商银行</option>
+<option value="浦发银行">浦发银行</option>
+<option value="江苏农村商业银行">江苏农村商业银行</option>
+<option value="湖北农村信用社">湖北农村信用社</option>
+<option value="安徽省农村信用社联合社">安徽省农村信用社联合社</option>
+<option value="福建省农村信用社联合社">福建省农村信用社联合社</option>
+<option value="平凉市城市信用社">平凉市城市信用社</option>
+<option value="光山县农村信用合作联社">光山县农村信用合作联社</option>
+<option value="鹤壁市城市信用社">鹤壁市城市信用社</option>
+<option value="平顶山市城市信用社">平顶山市城市信用社</option>
+<option value="三门峡市城市信用社">三门峡市城市信用社</option>
+<option value="信阳市浉河区农村信用联社">信阳市浉河区农村信用联社</option>
+<option value="湖北省农村信用社联合社">湖北省农村信用社联合社</option>
+<option value="白山市城市信用社">白山市城市信用社</option>
+<option value="辽源市城市信用社">辽源市城市信用社</option>
+<option value="松原市城市信用社">松原市城市信用社</option>
+<option value="常州市新北区农村信用合作联社">常州市新北区农村信用合作联社</option>
+<option value="东台市农村信用合作联社">东台市农村信用合作联社</option>
+<option value="赣榆县农村信用合作联社">赣榆县农村信用合作联社</option>
+<option value="海安县农村信用合作联社">海安县农村信用合作联社</option>
+<option value="洪泽县农村信用合作联社">洪泽县农村信用合作联社</option>
+<option value="淮安市楚州区农村信用合作联社">淮安市楚州区农村信用合作联社</option>
+<option value="江都市农村信用合作联社">江都市农村信用合作联社</option>
+<option value="句容市农村信用合作联社">句容市农村信用合作联社</option>
+<option value="南京市浦口区农村信用合作联社">南京市浦口区农村信用合作联社</option>
+<option value="启东市农村信用合作联社">启东市农村信用合作联社</option>
+<option value="如皋市农村信用合作联社">如皋市农村信用合作联社</option>
+<option value="扬州市区农村信用合作联社">扬州市区农村信用合作联社</option>
+<option value="江西省农村信用社联合社">江西省农村信用社联合社</option>
+<option value="辽宁省农村信用社联合社">辽宁省农村信用社联合社</option>
+<option value="阿鲁科尔沁旗农村信用合作联社">阿鲁科尔沁旗农村信用合作联社</option>
+<option value="巴林右旗农村信用合作联社">巴林右旗农村信用合作联社</option>
+<option value="巴林左旗农村信用合作联社">巴林左旗农村信用合作联社</option>
+<option value="包头市郊区农村信用联社">包头市郊区农村信用联社</option>
+<option value="赤峰市红山区农村信用合作联社">赤峰市红山区农村信用合作联社</option>
+<option value="山东农村信用社">山东农村信用社</option>
+<option value="江苏省农村信用社联合社">江苏省农村信用社联合社</option>
+<option value="网商银行">网商银行</option>
+<option value="浙江网商银行">浙江网商银行</option>
+<option value="云南景洪农村商业银行">云南景洪农村商业银行</option>
+<option value="惠州农商银行">惠州农商银行</option>
+<option value="义乌农商银行">义乌农商银行</option>
+<option value="厦门农商银行">厦门农商银行</option>
+<option value="湖北银行">湖北银行</option>
+<option value="莆田农商银行">莆田农商银行</option>
+<option value="贵州省农村信用社联合社">贵州省农村信用社联合社</option>
+<option value="黑龙江农村信用社">黑龙江农村信用社</option>
+<option value="东源农商银行">东源农商银行</option>
+<option value="石狮农商银行">石狮农商银行</option>
+<option value="西农村信用社">西农村信用社</option>
+<option value="宜宾市商业银行">宜宾市商业银行</option>
+<option value="云南砚山农村商业银行">云南砚山农村商业银行</option>
+<option value="山西省农村信用社">山西省农村信用社</option>
+<option value="台州银行">台州银行</option>
+<option value="湖南江永农村商业银行">湖南江永农村商业银行</option>
+<option value="山西银行">山西银行</option>
+<option value="晋城银行">晋城银行</option>
+<option value="浙江泰隆商业银行">浙江泰隆商业银行</option>
+<option value="西双版纳勐海长江村镇银行">西双版纳勐海长江村镇银行</option>
+<option value="广州农信银行">广州农信银行</option>
+<option value="三峡银行">三峡银行</option>
+<option value="无锡农村商业银行">无锡农村商业银行</option>
+<option value="苏州银行">苏州银行</option>
+<option value="GoPay虚拟币">GoPay虚拟币</option>
+<option value="本溪市商业银行">本溪市商业银行</option>
+<option value="安徽肥东农村商业银行">安徽肥东农村商业银行</option>
+<option value="蒙商银行">蒙商银行</option>
+<option value="浙江民泰商业银行">浙江民泰商业银行</option>
+<option value="绍兴银行">绍兴银行</option>
+<option value="昆山农商银行">昆山农商银行</option>
+<option value="江苏农村商业银行">江苏农村商业银行</option>
+<option value="中旅银行">中旅银行</option>
+<option value="四川农信银行">四川农信银行</option>
+<option value="石嘴山银行">石嘴山银行</option>
+<option value="阜新银行">阜新银行</option>
+<option value="福建省农村信用社">福建省农村信用社</option>
+<option value="刺桐红村镇银行">刺桐红村镇银行</option>
+<option value="鄂尔多斯银行">鄂尔多斯银行</option>
+<option value="海南农信">海南农信</option>
+<option value="杭州联合银行">杭州联合银行</option>
+<option value="常熟农商银行">常熟农商银行</option>
+<option value="浙江台州农商银行">浙江台州农商银行</option>
+<option value="深圳前海微众银行">深圳前海微众银行</option>
+<option value="广东南粤银行">广东南粤银行</option>
+<option value="河北省农村信用社联合社">河北省农村信用社联合社</option>
+<option value="广西银海国民村镇银行">广西银海国民村镇银行</option>
+<option value="张家口银行">张家口银行</option>
+<option value="山西农商银行">山西农商银行</option>
+<option value="滦平农村商业银行">滦平农村商业银行</option>
+<option value="上饶银行">上饶银行</option>
+<option value="华融湘江银行">华融湘江银行</option>
+<option value="平顶山银行">平顶山银行</option>
+<option value="潜江中银登富村镇银行">潜江中银登富村镇银行</option>
+<option value="潜江中银富登村镇银行">潜江中银富登村镇银行</option>
+<option value="武汉农村商业银行">武汉农村商业银行</option>
+<option value="潍坊农商银行">潍坊农商银行</option>
+<option value="深圳福田银座村镇银行">深圳福田银座村镇银行</option>
+<option value="长安银行">长安银行</option>
+<option value="在线支付">在线支付</option>
+<option value="OKpay虚拟币">OKpay虚拟币</option>
+<option value="山东农商银行">山东农商银行</option>
+<option value="湖南浏阳农村商业银行">湖南浏阳农村商业银行</option>
+<option value="南海农商银行">南海农商银行</option>
+<option value="海南省农村信用社联合社">海南省农村信用社联合社</option>
+<option value="内蒙古农商银行">内蒙古农商银行</option>
+<option value="潍坊银行">潍坊银行</option>
+<option value="安徽省农村信用联合社">安徽省农村信用联合社</option>
+<option value="陕西农村信用社联合社">陕西农村信用社联合社</option>
+<option value="泰隆银行">泰隆银行</option>
+<option value="浙江瓯海农商银行">浙江瓯海农商银行</option>
+<option value="成都农商银行">成都农商银行</option>
+<option value="唐山银行">唐山银行</option>
+<option value="枣庄银行">枣庄银行</option>
+<option value="内蒙古农村信用社">内蒙古农村信用社</option>
+<option value="贵阳农村商业银行">贵阳农村商业银行</option>
+<option value="泸州银行">泸州银行</option>
+<option value="张家港农村商业银行">张家港农村商业银行</option>
+<option value="海口联合农村商业银行">海口联合农村商业银行</option>
+<option value="四川省农村信用社联合社">四川省农村信用社联合社</option>
+<option value="富滇银行">富滇银行</option>
+<option value="中银富登村镇银行">中银富登村镇银行</option>
+<option value="新疆农村信用社">新疆农村信用社</option>
+<option value="浙江农商银行">浙江农商银行</option>
+<option value="江苏邗江民泰村镇银行">江苏邗江民泰村镇银行</option>
+<option value="绵阳市商业银行">绵阳市商业银行</option>
+<option value="江阴农商银行">江阴农商银行</option>
+<option value="濮阳中原村镇银行">濮阳中原村镇银行</option>
+<option value="上海农村商业银行">上海农村商业银行</option>
+<option value="江苏长江商业银行">江苏长江商业银行</option>
+<option value="融兴村镇银行">融兴村镇银行</option>
+<option value="TOpay钱包">TOpay钱包</option>
+<option value="德阳银行">德阳银行</option>
+<option value="吉林省农村信用社联合社">吉林省农村信用社联合社</option>
+<option value="USDT_TRC20">USDT_TRC20</option>
+<option value="广东南海农村商业银行">广东南海农村商业银行</option>
+<option value="太仓农村商业银行">太仓农村商业银行</option>
+<option value="江苏邗江联合村镇银行">江苏邗江联合村镇银行</option>
+<option value="苏州农商银行">苏州农商银行</option>
+<option value="江苏长江商业银行">江苏长江商业银行</option>
+<option value="山东省农村信用社联合社">山东省农村信用社联合社</option>
+<option value="德州银行">德州银行</option>
+<option value="抚顺银行">抚顺银行</option>
+<option value="长城华西银行">长城华西银行</option>
+<option value="山东郯城农村商业银行">山东郯城农村商业银行</option>
+<option value="GooPay虚拟币">GooPay虚拟币</option>
+<option value="深圳农商银行">深圳农商银行</option>
+<option value="华润银行">华润银行</option>
+<option value="包商银行">包商银行</option>
+<option value="汉囗银行">汉囗银行</option>
+<option value="浙江农村信用社">浙江农村信用社</option>
+<option value="青海农商银行">青海农商银行</option>
+<option value="青海省农村信用社">青海省农村信用社</option>
+<option value="东营银行">东营银行</option>
+<option value="江西农商银行">江西农商银行</option>
+<option value="OPAY钱包">OPAY钱包</option>
+<option value="吉林农村信用社">吉林农村信用社</option>
+<option value="乌鲁木齐银行">乌鲁木齐银行</option>
+<option value="西藏银行">西藏银行</option>
+<option value="五家渠国民村镇银行">五家渠国民村镇银行</option>
+<option value="博乐国民村镇银行">博乐国民村镇银行</option>
+<option value="兴福村镇银行">兴福村镇银行</option>
+<option value="济宁蓝海村镇银行">济宁蓝海村镇银行</option>
+<option value="泉州农村商业银行">泉州农村商业银行</option>
+<option value="广州农村商业银行股份有限公司">广州农村商业银行股份有限公司</option>
+<option value="吴江农村商业银行">吴江农村商业银行</option>
+<option value="内蒙古自治区农村信用联合社">内蒙古自治区农村信用联合社</option>
+<option value="金华银行">金华银行</option>
+<option value="曲靖惠民村镇银行">曲靖惠民村镇银行</option>
+<option value="鞍山银行">鞍山银行</option>
+<option value="广东阳江农商银行">广东阳江农商银行</option>
+<option value="苏州银行">苏州银行</option>
+<option value="云南红塔银行">云南红塔银行</option>
+<option value="青海银行">青海银行</option>
+<option value="怀来利丰村镇银行">怀来利丰村镇银行</option>
+<option value="罗定农商银行">罗定农商银行</option>
+<option value="黑龙江绥化市兰西农商村镇银行">黑龙江绥化市兰西农商村镇银行</option>
+<option value="钦州钦南国民村镇银行">钦州钦南国民村镇银行</option>
+<option value="江苏泗洪东吴村镇银行">江苏泗洪东吴村镇银行</option>
+<option value="大连银行">大连银行</option>
+<option value="恩施农村商业银行">恩施农村商业银行</option>
+<option value="达州银行">达州银行</option>
+<option value="长白榆银村镇银行">长白榆银村镇银行</option>
+<option value="河南农村信用社">河南农村信用社</option>
+<option value="FPAY钱包">FPAY钱包</option>
+<option value="珠海农商银行">珠海农商银行</option>
+<option value="内蒙古银行">内蒙古银行</option>
+<option value="青岛农商银行">青岛农商银行</option>
+<option value="盘锦银行">盘锦银行</option>
+<option value=" 雅安市商业银行"> 雅安市商业银行</option>
+<option value="长沙银行">长沙银行</option>
+<option value="安徽农村商业银行">安徽农村商业银行</option>
+<option value="南充市商业银行">南充市商业银行</option>
+<option value="VIPpay虚拟币">VIPpay虚拟币</option>
+<option value="甬城农商银行">甬城农商银行</option>
+<option value="长治泰都村镇银行">长治泰都村镇银行</option>
+<option value="晋中银行">晋中银行</option>
+<option value="广元市贵商村镇银行">广元市贵商村镇银行</option>
+<option value="烟台银行">烟台银行</option>
+<option value="保定银行">保定银行</option>
+<option value="辽沈银行">辽沈银行</option>
+<option value="上栗富民村镇银行">上栗富民村镇银行</option>
+<option value="江南农村商业银行">江南农村商业银行</option>
+<option value="三门农商银行">三门农商银行</option>
+<option value="河北农村信用社">河北农村信用社</option>
+<option value="河南省农村信用社">河南省农村信用社</option>
+<option value="广东英德农商银行">广东英德农商银行</option>
+<option value="焦作市商业银行">焦作市商业银行</option>
+<option value="桓台青隆村镇银行">桓台青隆村镇银行</option>
+<option value="綦江民生村镇银行">綦江民生村镇银行</option>
+<option value="万币虚拟币">万币虚拟币</option>
+<option value="南城富民村镇银行">南城富民村镇银行</option>
+<option value="新疆银行">新疆银行</option>
+<option value="潮州农商银行">潮州农商银行</option>
+<option value="邢台银行">邢台银行</option>
+<option value="黄河银行">黄河银行</option>
+<option value="USDT_ERC20">USDT_ERC20</option>
+<option value="铁岭银行">铁岭银行</option>
+<option value="四川银行">四川银行</option>
+<option value="大理洱源长江村镇银行">大理洱源长江村镇银行</option>
+<option value="沙洋中银富登村镇银行">沙洋中银富登村镇银行</option>
+<option value="昆明商业银行">昆明商业银行</option>
+<option value="山西省农村信用社联合社">山西省农村信用社联合社</option>
+<option value="昆明农联社">昆明农联社</option>
+<option value="睢县德商村镇银行">睢县德商村镇银行</option>
+<option value="浦发村镇银行">浦发村镇银行</option>
+<option value="湖南银行">湖南银行</option>
+<option value="云南农村信用社">云南农村信用社</option>
+<option value="自贡银行">自贡银行</option>
+<option value="贵安新区发展村镇银行">贵安新区发展村镇银行</option>
+<option value="乐亭舜丰村镇银行">乐亭舜丰村镇银行</option>
+<option value="辽宁农村信用社">辽宁农村信用社</option>
+<option value="唐山市开平汇金村镇银行">唐山市开平汇金村镇银行</option>
+<option value="唐山市丰南舜丰村镇银行">唐山市丰南舜丰村镇银行</option>
+<option value="丰南舜丰村镇银行">丰南舜丰村镇银行</option>
+<option value="安徽霍山联合村镇银行">安徽霍山联合村镇银行</option>
+<option value="桦南融兴村镇银行">桦南融兴村镇银行</option>
+<option value="KDpay虚拟币">KDpay虚拟币</option>
+<option value="K豆钱包">K豆钱包</option>
+<option value="东亚银行">东亚银行</option>
+<option value="平和润丰村镇银行">平和润丰村镇银行</option>
+<option value="合阳惠民村镇银行">合阳惠民村镇银行</option>
+<option value="中山农商银行">中山农商银行</option>
+<option value="营口银行">营口银行</option>
+<option value="江西赣州银座村镇银行">江西赣州银座村镇银行</option>
+<option value="宁波东海银行">宁波东海银行</option>
+<option value="湖南农信银行">湖南农信银行</option>
+<option value="滦南中成村镇银行">滦南中成村镇银行</option>
+<option value="Tpay">Tpay</option>
+</select>            <b>代付状态：</b>
+<select class="js-example-basic-single" data-val="true" data-val-number="字段 RemitResult 必须是一个数字。" id="RemitResult" name="RemitResult" style="width:80px;"><option value="">请选择</option>
+<option value="-1">未使用</option>
+<option value="0">处理中</option>
+<option value="1">已确认</option>
+<option value="2">已取消</option>
+</select>            <b>操作金额：</b>
+            <input style="width:30px" type="text" id="ActionMoney_Min" name="ActionMoney_Min" value="0" /><b> ~ </b>
+            <input style="width:30px" type="text" id="ActionMoney_Max" name="ActionMoney_Max" value="0" />
+            <b>日期:</b>
+            <B>:</B>
+            <input class="laydate-icon" style="width:140px;" type="datetime" id="BetStartDate" name="BetStartDate" value="2022/7/1 0:00:00" />
+            <input class="laydate-icon" style="width:140px;" type="datetime" id="BetEndDate" name="BetEndDate" value="2023/4/26 23:59:59" />
+<select id="SearchSelect" name="SearchSelect"><option value="234643FC54B16A1F694E9F2369BE24EC">会员账号</option>
+<option value="0880C204A3D48C03">订单号</option>
+<option value="D36D54F4C425FA28">代理账号</option>
+<option value="00B4B0C6A9845B68A09364207B36957B">代付商户</option>
+<option value="E967AAB40C54A160B228063ECC708972">操纵者</option>
+</select>            <input style="width:150px" type="text" id="SearchText" name="SearchText" />
+            <input class="za_button" type="submit" id="append" name="append" value="查询">
+            <b>每页显示:</b>
+<select data-val="true" data-val-number="字段 PageSize 必须是一个数字。" data-val-required="PageSize 字段是必需的。" id="PageSize" name="PageSize"><option value="5">5</option>
+<option value="20">20</option>
+<option selected="selected" value="50">50</option>
+<option value="100">100</option>
+<option value="200">200</option>
+<option value="1000">1000</option>
+<option value="2000">2000</option>
+</select>            <b>刷新:</b>
+<input data-val="true" data-val-required="Boolean 字段是必需的。" id="ischeck" name="ischeck" type="checkbox" value="true" /><input name="ischeck" type="hidden" value="false" /><select id="freshTime" name="freshTime"><option value="120000">120s</option>
+<option selected="selected" value="60000">60s</option>
+<option value="30000">30s</option>
+</select>            <a href="javascript:void(0)" style="color:red" id="switch">切换新版</a>
+                <div style="padding-left:95px">
+                    <b>层级：</b>
+                            <input name="VipGroup" type="checkbox" value="AD11227A5DC645CB" />批量注册                            <input name="VipGroup" type="checkbox" value="B354397FC66DE9D8" />无三方                            <input name="VipGroup" type="checkbox" value="4CC82CB5D195301B" />涉嫌套利                            <input name="VipGroup" type="checkbox" value="7F6E5B49986C8371" />停用的会员-不要开启                            <input name="VipGroup" type="checkbox" value="0D0316C85F7ED3EE" />不返水                            <input name="VipGroup" type="checkbox" value="1ABD76CAF604D7BA" />内部测试                            <input name="VipGroup" type="checkbox" value="E3E988282A5BBDDE" />vip9                            <input name="VipGroup" type="checkbox" value="FA93C98C1E054AB0" />vip8                            <input name="VipGroup" type="checkbox" value="1CA23373668A22A5" />vip7                            <input name="VipGroup" type="checkbox" value="2F1AAFA512F5164F" />vip1                            <input name="VipGroup" type="checkbox" value="7C74C394B8D2FE0A" />首存29+39                            <input name="VipGroup" type="checkbox" value="CAC41280D7CC6038" />筛选组                            <input name="VipGroup" type="checkbox" value="998729C14473F88B" />默认层                </div>
+                <br />
+                <div style="padding-left:95px">
+                    <b>处理状态：</b>
+                            <input name="Status" type="checkbox" value="49ECD275F3FD5963" />待处理                                <input name="Status" type="checkbox" value="C605DF52273A001C" checked />已处理                            <input name="Status" type="checkbox" value="906103C62CBC7B29" />已取消                            <input name="Status" type="checkbox" value="98EE852F0341E665" />已拒绝                </div>
+</form>    </div>
+</div>
+<p style="padding:10px">
+    <b>总笔数<b style="color:red">（212248）</b></b>
+    <b style="padding-left:10px">出款金额<b style="color:red">（451952938.00）</b></b>
+    <b style="padding-left:10px">实际出款<b style="color:red">（451951239.27）</b></b>
+</p>
+<div class="content">
+    <table cellspacing="0" cellpadding="0" class="m_tab" id="table">
+        <tr class="m_title_over_co" style="background-color: #429CCD;">
+            <td>层级</td>
+            <td>代理商</td>
+            <td>会员账号</td>
+            <td>真实姓名</td>
+            
+            <td>银行卡号</td>
+            <td>提出额度</td>
+            <td>手续费</td>
+            <td>优惠金额</td>
+            <td>行政费</td>
+            <td>出款额度</td>
+            <td>余额</td>
+            <td>优惠扣除</td>
+            <td>出款状态</td>
+            <td>代付状态</td>
+            <td>首次出款</td>
+            <td>添加时间</td>
+            <td>操作时间</td>
+            <td>操纵者</td>
+                <td>操作</td>
+            <td>前台备注</td>
+            <td>后台备注</td>
+            <td>代付商户</td>
+        </tr>
+
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>vip108</td>
+                <td title="MOUT5648159956873933326">
+                    wz542640<br />
+                </td>
+                <td>
+                    罗福亮
+                </td>
+                
+                <td>
+                    
+                    <p>6228410384560923974</p>
+                </td>
+                <td>
+                    390.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_E9653E485D783CEA">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_E9653E485D783CEA">0.00</p>
+                </td>
+                <td>
+<p id="xzf_E9653E485D783CEA">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_E9653E485D783CEA" onclick="vipbank(this,'5F2445CC5897CB65','390.000000',5766729)"
+                       style="cursor:pointer;color:blue">390.00</p>
+                </td>
+                <td>8.74</td>
+                <td>
+                        <p id="yhkc_E9653E485D783CEA">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>已确认</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 1:04:08
+                </td>
+                <td>
+                    2023/3/14 1:04:36
+                </td>
+                <td>
+                    <p id="createBy_E9653E485D783CEA">ck2939b</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766729');">
+                        <p id="Remark_5766729"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766729');">
+                        <p id="WebRemark_5766729">顺为</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>顺为出款=&gt;M1001878</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>vip9</b></td>
+                <td>vip0088</td>
+                <td title="APPOUT5713585237057532032">
+                    s1453085768<br />
+                </td>
+                <td>
+                    明鑫
+                </td>
+                
+                <td>
+                    
+                    <p>6228480039311781478</p>
+                </td>
+                <td>
+                    14504.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_80DE1CFB2B682D28">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_80DE1CFB2B682D28">0.00</p>
+                </td>
+                <td>
+<p id="xzf_80DE1CFB2B682D28">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_80DE1CFB2B682D28" onclick="vipbank(this,'8C5C0536B6A2D408','14504.000000',5766715)"
+                       style="cursor:pointer;color:blue">14504.00</p>
+                </td>
+                <td>0.48</td>
+                <td>
+                        <p id="yhkc_80DE1CFB2B682D28">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 1:03:56
+                </td>
+                <td>
+                    2023/3/14 1:04:12
+                </td>
+                <td>
+                    <p id="createBy_80DE1CFB2B682D28">ck2939a</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766715');">
+                        <p id="Remark_5766715"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766715');">
+                        <p id="WebRemark_5766715">利群</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>vip7</b></td>
+                <td>wawzwacdl001</td>
+                <td title="MOUT5437552963970773842">
+                    sum6688<br />
+                </td>
+                <td>
+                    张晗
+                </td>
+                
+                <td>
+                    
+                    <p>6228480038486316474</p>
+                </td>
+                <td>
+                    21720.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_DD5910D265C4AE6B">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_DD5910D265C4AE6B">0.00</p>
+                </td>
+                <td>
+<p id="xzf_DD5910D265C4AE6B">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_DD5910D265C4AE6B" onclick="vipbank(this,'34E673D217DAA7EA','21720.000000',5766685)"
+                       style="cursor:pointer;color:blue">21720.00</p>
+                </td>
+                <td>0.85</td>
+                <td>
+                        <p id="yhkc_DD5910D265C4AE6B">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 1:03:32
+                </td>
+                <td>
+                    2023/3/14 1:03:49
+                </td>
+                <td>
+                    <p id="createBy_DD5910D265C4AE6B">ck2939a</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766685');">
+                        <p id="Remark_5766685"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766685');">
+                        <p id="WebRemark_5766685">CN</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>vip1</b></td>
+                <td>vip0088</td>
+                <td title="APPOUT5706178200122221077">
+                    f2122795<br />
+                </td>
+                <td>
+                    王雷
+                </td>
+                
+                <td>
+                    
+                    <p>6228481198658678371</p>
+                </td>
+                <td>
+                    100.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_397A830402E863F0">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_397A830402E863F0">0.00</p>
+                </td>
+                <td>
+<p id="xzf_397A830402E863F0">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_397A830402E863F0" onclick="vipbank(this,'AC532CD7AE380528','100.000000',5766598)"
+                       style="cursor:pointer;color:blue">100.00</p>
+                </td>
+                <td>0.11</td>
+                <td>
+                        <p id="yhkc_397A830402E863F0">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>已确认</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 1:02:27
+                </td>
+                <td>
+                    2023/3/14 1:02:40
+                </td>
+                <td>
+                    <p id="createBy_397A830402E863F0">ck2939b</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766598');">
+                        <p id="Remark_5766598"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766598');">
+                        <p id="WebRemark_5766598">顺为</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>顺为出款=&gt;M1001878</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>vip999</td>
+                <td title="MOUT4717519423065362200">
+                    m251314<br />
+                </td>
+                <td>
+                    苏永明
+                </td>
+                
+                <td>
+                    
+                    <p>6228480588846662876</p>
+                </td>
+                <td>
+                    154.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_EBFF35FDA0F64AEB">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_EBFF35FDA0F64AEB">0.00</p>
+                </td>
+                <td>
+<p id="xzf_EBFF35FDA0F64AEB">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_EBFF35FDA0F64AEB" onclick="vipbank(this,'51274F5FE12756FE','154.000000',5766593)"
+                       style="cursor:pointer;color:blue">154.00</p>
+                </td>
+                <td>0.09</td>
+                <td>
+                        <p id="yhkc_EBFF35FDA0F64AEB">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>已确认</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 1:02:23
+                </td>
+                <td>
+                    2023/3/14 1:02:34
+                </td>
+                <td>
+                    <p id="createBy_EBFF35FDA0F64AEB">ck2939k</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766593');">
+                        <p id="Remark_5766593"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766593');">
+                        <p id="WebRemark_5766593">顺为</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>顺为出款=&gt;M1001878</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>vip1</b></td>
+                <td>vip0088</td>
+                <td title="APPOUT4958604551555860005">
+                    wen4711146<br />
+                </td>
+                <td>
+                    张志文
+                </td>
+                
+                <td>
+                    
+                    <p>6217000180028571424</p>
+                </td>
+                <td>
+                    1737.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_097617F693F47055">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_097617F693F47055">0.00</p>
+                </td>
+                <td>
+<p id="xzf_097617F693F47055">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_097617F693F47055" onclick="vipbank(this,'303AE6E37DF5F769','1737.000000',5766536)"
+                       style="cursor:pointer;color:blue">1737.00</p>
+                </td>
+                <td>0.79</td>
+                <td>
+                        <p id="yhkc_097617F693F47055">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 1:01:53
+                </td>
+                <td>
+                    2023/3/14 1:02:03
+                </td>
+                <td>
+                    <p id="createBy_097617F693F47055">ck2939k</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766536');">
+                        <p id="Remark_5766536"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766536');">
+                        <p id="WebRemark_5766536">狂飙</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>vip7</b></td>
+                <td>vip0088</td>
+                <td title="MOUT5360884430226730636">
+                    djh9420<br />
+                </td>
+                <td>
+                    邓杰辉
+                </td>
+                
+                <td>
+                    
+                    <p>6212252018001943465</p>
+                </td>
+                <td>
+                    26990.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_9158E5FA6C97378B">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_9158E5FA6C97378B">0.00</p>
+                </td>
+                <td>
+<p id="xzf_9158E5FA6C97378B">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_9158E5FA6C97378B" onclick="vipbank(this,'5623593305E207B8','26990.000000',5766484)"
+                       style="cursor:pointer;color:blue">26990.00</p>
+                </td>
+                <td>2.59</td>
+                <td>
+                        <p id="yhkc_9158E5FA6C97378B">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 1:01:26
+                </td>
+                <td>
+                    2023/3/14 1:05:18
+                </td>
+                <td>
+                    <p id="createBy_9158E5FA6C97378B">ck2939</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766484');">
+                        <p id="Remark_5766484"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766484');">
+                        <p id="WebRemark_5766484">cn</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>默认层</b></td>
+                <td>vip666</td>
+                <td title="APPOUT5353242102807790938">
+                    shyjsly<br />
+                </td>
+                <td>
+                    史昊宇
+                </td>
+                
+                <td>
+                    
+                    <p>6217001370048747331</p>
+                </td>
+                <td>
+                    618.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_C15B7F1512CE3FE3">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_C15B7F1512CE3FE3">0.00</p>
+                </td>
+                <td>
+<p id="xzf_C15B7F1512CE3FE3">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_C15B7F1512CE3FE3" onclick="vipbank(this,'AAF68540F5D0F63C','618.000000',5766262)"
+                       style="cursor:pointer;color:blue">618.00</p>
+                </td>
+                <td>0.29</td>
+                <td>
+                        <p id="yhkc_C15B7F1512CE3FE3">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:59:53
+                </td>
+                <td>
+                    2023/3/14 1:00:07
+                </td>
+                <td>
+                    <p id="createBy_C15B7F1512CE3FE3">ck2939a</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766262');">
+                        <p id="Remark_5766262"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766262');">
+                        <p id="WebRemark_5766262">狂飙</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>vip1</b></td>
+                <td>vip332</td>
+                <td title="MOUT5740142583155665662">
+                    qq1291482<br />
+                </td>
+                <td>
+                    傅鑫海
+                </td>
+                
+                <td>
+                    
+                    <p>6216617015000884816</p>
+                </td>
+                <td>
+                    1500.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_5B420F55999A8D93">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_5B420F55999A8D93">0.00</p>
+                </td>
+                <td>
+<p id="xzf_5B420F55999A8D93">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_5B420F55999A8D93" onclick="vipbank(this,'733A849E1E251800','1500.000000',5766251)"
+                       style="cursor:pointer;color:blue">1500.00</p>
+                </td>
+                <td>517.85</td>
+                <td>
+                        <p id="yhkc_5B420F55999A8D93">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:59:35
+                </td>
+                <td>
+                    2023/3/14 0:59:42
+                </td>
+                <td>
+                    <p id="createBy_5B420F55999A8D93">ck2939</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766251');">
+                        <p id="Remark_5766251"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766251');">
+                        <p id="WebRemark_5766251">天猫</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>wawzwacdl001</td>
+                <td title="APPOUT4650550390053675901">
+                    lj19880908<br />
+                </td>
+                <td>
+                    刘德建
+                </td>
+                
+                <td>
+                    
+                    <p>6228480479236814774</p>
+                </td>
+                <td>
+                    100.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_FE86BAA1F027716F">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_FE86BAA1F027716F">0.00</p>
+                </td>
+                <td>
+<p id="xzf_FE86BAA1F027716F">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_FE86BAA1F027716F" onclick="vipbank(this,'18068ECBD06ADCD4','100.000000',5766249)"
+                       style="cursor:pointer;color:blue">100.00</p>
+                </td>
+                <td>49.81</td>
+                <td>
+                        <p id="yhkc_FE86BAA1F027716F">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>已确认</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:59:29
+                </td>
+                <td>
+                    2023/3/14 0:59:41
+                </td>
+                <td>
+                    <p id="createBy_FE86BAA1F027716F">ck2939a</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766249');">
+                        <p id="Remark_5766249"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766249');">
+                        <p id="WebRemark_5766249">顺为</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>顺为出款=&gt;M1001878</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>wawzwacdl001</td>
+                <td title="MOUT5438803588052448030">
+                    w1375647<br />
+                </td>
+                <td>
+                    武波
+                </td>
+                
+                <td>
+                    
+                    <p>6230520530032012977</p>
+                </td>
+                <td>
+                    470.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_A5FB241F69074C69">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_A5FB241F69074C69">0.00</p>
+                </td>
+                <td>
+<p id="xzf_A5FB241F69074C69">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_A5FB241F69074C69" onclick="vipbank(this,'A1EA3B993DE8FAEF','470.000000',5766210)"
+                       style="cursor:pointer;color:blue">470.00</p>
+                </td>
+                <td>1.87</td>
+                <td>
+                        <p id="yhkc_A5FB241F69074C69">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:58:02
+                </td>
+                <td>
+                    2023/3/14 0:58:15
+                </td>
+                <td>
+                    <p id="createBy_A5FB241F69074C69">ck2939b</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766210');">
+                        <p id="Remark_5766210"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766210');">
+                        <p id="WebRemark_5766210">法国</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>默认层</b></td>
+                <td>wawzwacdl001</td>
+                <td title="MOUT4642901136673255829">
+                    hjj123456<br />
+                </td>
+                <td>
+                    何建福
+                </td>
+                
+                <td>
+                    
+                    <p>6228485038371560777</p>
+                </td>
+                <td>
+                    1000.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_7DB568811701915F">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_7DB568811701915F">0.00</p>
+                </td>
+                <td>
+<p id="xzf_7DB568811701915F">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_7DB568811701915F" onclick="vipbank(this,'46324136FD4EEA83','1000.000000',5766182)"
+                       style="cursor:pointer;color:blue">1000.00</p>
+                </td>
+                <td>200.00</td>
+                <td>
+                        <p id="yhkc_7DB568811701915F">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:56:56
+                </td>
+                <td>
+                    2023/3/14 0:57:08
+                </td>
+                <td>
+                    <p id="createBy_7DB568811701915F">ck2939b</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766182');">
+                        <p id="Remark_5766182"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766182');">
+                        <p id="WebRemark_5766182">法国</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>wawzwacdl001</td>
+                <td title="MOUT5180540873230199613">
+                    wyj123321<br />
+                </td>
+                <td>
+                    王义军
+                </td>
+                
+                <td>
+                    
+                    <p>6228232865308653366</p>
+                </td>
+                <td>
+                    1000.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_1BC32FB23C5D607E">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_1BC32FB23C5D607E">0.00</p>
+                </td>
+                <td>
+<p id="xzf_1BC32FB23C5D607E">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_1BC32FB23C5D607E" onclick="vipbank(this,'81178C5B059D5198','1000.000000',5766116)"
+                       style="cursor:pointer;color:blue">1000.00</p>
+                </td>
+                <td>0.90</td>
+                <td>
+                        <p id="yhkc_1BC32FB23C5D607E">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:54:39
+                </td>
+                <td>
+                    2023/3/14 0:54:57
+                </td>
+                <td>
+                    <p id="createBy_1BC32FB23C5D607E">ck2939b</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766116');">
+                        <p id="Remark_5766116"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766116');">
+                        <p id="WebRemark_5766116">法国</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>vip434</td>
+                <td title="MOUT5198638327384672423">
+                    luwuli<br />
+                </td>
+                <td>
+                    张荣升
+                </td>
+                
+                <td>
+                    
+                    <p>6212261704011141179</p>
+                </td>
+                <td>
+                    400.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_AF3DC8441A726125">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_AF3DC8441A726125">0.00</p>
+                </td>
+                <td>
+<p id="xzf_AF3DC8441A726125">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_AF3DC8441A726125" onclick="vipbank(this,'56000CB68A3942F5','400.000000',5766111)"
+                       style="cursor:pointer;color:blue">400.00</p>
+                </td>
+                <td>3.52</td>
+                <td>
+                        <p id="yhkc_AF3DC8441A726125">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>已确认</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:54:32
+                </td>
+                <td>
+                    2023/3/14 0:54:46
+                </td>
+                <td>
+                    <p id="createBy_AF3DC8441A726125">ck2939b</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766111');">
+                        <p id="Remark_5766111"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766111');">
+                        <p id="WebRemark_5766111">顺为</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>顺为出款=&gt;M1001878</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>wawzwacdl001</td>
+                <td title="APPOUT4806526283789664955">
+                    zxj843914<br />
+                </td>
+                <td>
+                    曾宪俊
+                </td>
+                
+                <td>
+                    
+                    <p>6228480128847285870</p>
+                </td>
+                <td>
+                    250.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_008A834F09CDCD32">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_008A834F09CDCD32">0.00</p>
+                </td>
+                <td>
+<p id="xzf_008A834F09CDCD32">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_008A834F09CDCD32" onclick="vipbank(this,'BDCBBDDA23FFA9EA','250.000000',5766051)"
+                       style="cursor:pointer;color:blue">250.00</p>
+                </td>
+                <td>0.72</td>
+                <td>
+                        <p id="yhkc_008A834F09CDCD32">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>已确认</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:52:23
+                </td>
+                <td>
+                    2023/3/14 0:52:53
+                </td>
+                <td>
+                    <p id="createBy_008A834F09CDCD32">ck2939</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766051');">
+                        <p id="Remark_5766051"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766051');">
+                        <p id="WebRemark_5766051">顺为</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>顺为出款=&gt;M1001878</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>vip296</td>
+                <td title="MOUT5388148395194722026">
+                    sg745835<br />
+                </td>
+                <td>
+                    万奎
+                </td>
+                
+                <td>
+                    
+                    <p>6215231004069976</p>
+                </td>
+                <td>
+                    700.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_6EE1CF9DBA49D62D">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_6EE1CF9DBA49D62D">0.00</p>
+                </td>
+                <td>
+<p id="xzf_6EE1CF9DBA49D62D">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_6EE1CF9DBA49D62D" onclick="vipbank(this,'9164F95C6A32EAF4','700.000000',5766040)"
+                       style="cursor:pointer;color:blue">700.00</p>
+                </td>
+                <td>0.69</td>
+                <td>
+                        <p id="yhkc_6EE1CF9DBA49D62D">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:52:08
+                </td>
+                <td>
+                    2023/3/14 0:52:27
+                </td>
+                <td>
+                    <p id="createBy_6EE1CF9DBA49D62D">ck2939b</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766040');">
+                        <p id="Remark_5766040"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766040');">
+                        <p id="WebRemark_5766040">法国</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>wawzwacdl001</td>
+                <td title="APPOUT4791677109387732538">
+                    lyh891004<br />
+                </td>
+                <td>
+                    刘应辉
+                </td>
+                
+                <td>
+                    
+                    <p>6228480031717013010</p>
+                </td>
+                <td>
+                    700.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_D3F2EF5C18D03176">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_D3F2EF5C18D03176">0.00</p>
+                </td>
+                <td>
+<p id="xzf_D3F2EF5C18D03176">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_D3F2EF5C18D03176" onclick="vipbank(this,'C54A59CF87746FCD','700.000000',5766011)"
+                       style="cursor:pointer;color:blue">700.00</p>
+                </td>
+                <td>78.82</td>
+                <td>
+                        <p id="yhkc_D3F2EF5C18D03176">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:50:53
+                </td>
+                <td>
+                    2023/3/14 0:51:01
+                </td>
+                <td>
+                    <p id="createBy_D3F2EF5C18D03176">ck2939k</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766011');">
+                        <p id="Remark_5766011"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5766011');">
+                        <p id="WebRemark_5766011">法国</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>默认层</b></td>
+                <td>vip429</td>
+                <td title="APPOUT5277538614917224642">
+                    qaz258258258<br />
+                </td>
+                <td>
+                    邓柳城
+                </td>
+                
+                <td>
+                    
+                    <p>6230388810021526976</p>
+                </td>
+                <td>
+                    150.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_0CD177516CC2D20B">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_0CD177516CC2D20B">0.00</p>
+                </td>
+                <td>
+<p id="xzf_0CD177516CC2D20B">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_0CD177516CC2D20B" onclick="vipbank(this,'AB6C143796A93A52','150.000000',5765962)"
+                       style="cursor:pointer;color:blue">150.00</p>
+                </td>
+                <td>35.31</td>
+                <td>
+                        <p id="yhkc_0CD177516CC2D20B">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:49:09
+                </td>
+                <td>
+                    2023/3/14 0:49:23
+                </td>
+                <td>
+                    <p id="createBy_0CD177516CC2D20B">ck2939b</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765962');">
+                        <p id="Remark_5765962"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765962');">
+                        <p id="WebRemark_5765962">法国</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>wawzwacdl001</td>
+                <td title="APPOUT4642208012693534402">
+                    zhang66<br />
+                </td>
+                <td>
+                    张森
+                </td>
+                
+                <td>
+                    
+                    <p>6217003760178840138</p>
+                </td>
+                <td>
+                    500.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_0BEF13529A544E7A">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_0BEF13529A544E7A">0.00</p>
+                </td>
+                <td>
+<p id="xzf_0BEF13529A544E7A">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_0BEF13529A544E7A" onclick="vipbank(this,'7CB3380196CC4A12','500.000000',5765938)"
+                       style="cursor:pointer;color:blue">500.00</p>
+                </td>
+                <td>567.78</td>
+                <td>
+                        <p id="yhkc_0BEF13529A544E7A">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:48:16
+                </td>
+                <td>
+                    2023/3/14 0:48:31
+                </td>
+                <td>
+                    <p id="createBy_0BEF13529A544E7A">ck2939b</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765938');">
+                        <p id="Remark_5765938"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765938');">
+                        <p id="WebRemark_5765938">法国</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>vip0088</td>
+                <td title="MOUT4721377138357082451">
+                    gzq123456gzq<br />
+                </td>
+                <td>
+                    高增强
+                </td>
+                
+                <td>
+                    
+                    <p>6228481928602861073</p>
+                </td>
+                <td>
+                    250.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_9D4B31787BF58B97">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_9D4B31787BF58B97">0.00</p>
+                </td>
+                <td>
+<p id="xzf_9D4B31787BF58B97">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_9D4B31787BF58B97" onclick="vipbank(this,'221AEE1D9B608914','250.000000',5765930)"
+                       style="cursor:pointer;color:blue">250.00</p>
+                </td>
+                <td>4.39</td>
+                <td>
+                        <p id="yhkc_9D4B31787BF58B97">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>已确认</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:48:01
+                </td>
+                <td>
+                    2023/3/14 0:48:19
+                </td>
+                <td>
+                    <p id="createBy_9D4B31787BF58B97">ck2939b</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765930');">
+                        <p id="Remark_5765930"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765930');">
+                        <p id="WebRemark_5765930">顺为</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>顺为出款=&gt;M1001878</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>wawzwacdl001</td>
+                <td title="APPOUT4785017764090725220">
+                    zjh150523486<br />
+                </td>
+                <td>
+                    赵建华
+                </td>
+                
+                <td>
+                    
+                    <p>6224526811003226268</p>
+                </td>
+                <td>
+                    1000.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_ED6D6B3D604ED2B6">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_ED6D6B3D604ED2B6">0.00</p>
+                </td>
+                <td>
+<p id="xzf_ED6D6B3D604ED2B6">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_ED6D6B3D604ED2B6" onclick="vipbank(this,'0F75B9DDB50B610F','1000.000000',5765877)"
+                       style="cursor:pointer;color:blue">1000.00</p>
+                </td>
+                <td>0.07</td>
+                <td>
+                        <p id="yhkc_ED6D6B3D604ED2B6">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:46:19
+                </td>
+                <td>
+                    2023/3/14 0:46:38
+                </td>
+                <td>
+                    <p id="createBy_ED6D6B3D604ED2B6">ck2939k</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765877');">
+                        <p id="Remark_5765877"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765877');">
+                        <p id="WebRemark_5765877">狂飙</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>默认层</b></td>
+                <td>wawzwacdl001</td>
+                <td title="APPOUT4752669630788500122">
+                    sssdffwe<br />
+                </td>
+                <td>
+                    陈扬
+                </td>
+                
+                <td>
+                    
+                    <p>6217000130007297921</p>
+                </td>
+                <td>
+                    400.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_868D73A25EB81A69">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_868D73A25EB81A69">0.00</p>
+                </td>
+                <td>
+<p id="xzf_868D73A25EB81A69">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_868D73A25EB81A69" onclick="vipbank(this,'B7BFA19B03F6A300','400.000000',5765874)"
+                       style="cursor:pointer;color:blue">400.00</p>
+                </td>
+                <td>150.76</td>
+                <td>
+                        <p id="yhkc_868D73A25EB81A69">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:46:16
+                </td>
+                <td>
+                    2023/3/14 0:46:34
+                </td>
+                <td>
+                    <p id="createBy_868D73A25EB81A69">ck2939k</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765874');">
+                        <p id="Remark_5765874"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765874');">
+                        <p id="WebRemark_5765874">狂飙</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>默认层</b></td>
+                <td>wawzwacdl001</td>
+                <td title="MOUT5446172373653118374">
+                    xen318295<br />
+                </td>
+                <td>
+                    未丹琴
+                </td>
+                
+                <td>
+                    
+                    <p>6214837905723106</p>
+                </td>
+                <td>
+                    324.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_8BB375642E72E1E4">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_8BB375642E72E1E4">0.00</p>
+                </td>
+                <td>
+<p id="xzf_8BB375642E72E1E4">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_8BB375642E72E1E4" onclick="vipbank(this,'8347DAAF4B1FEA56','324.000000',5765817)"
+                       style="cursor:pointer;color:blue">324.00</p>
+                </td>
+                <td>0.00</td>
+                <td>
+                        <p id="yhkc_8BB375642E72E1E4">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>已确认</td>
+                <td>
+ <span style="color:red">是</span>                </td>
+                <td>
+                    2023/3/14 0:44:33
+                </td>
+                <td>
+                    2023/3/14 0:45:44
+                </td>
+                <td>
+                    <p id="createBy_8BB375642E72E1E4">ck2939b</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765817');">
+                        <p id="Remark_5765817"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765817');">
+                        <p id="WebRemark_5765817">顺为</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>顺为出款=&gt;M1001878</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>vip9</b></td>
+                <td>vip888</td>
+                <td title="MOUT5343546310838720443">
+                    mm0707<br />
+                </td>
+                <td>
+                    孟庆鑫
+                </td>
+                
+                <td>
+                    
+                    <p>6228480425826927773</p>
+                </td>
+                <td>
+                    23000.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_DAF2614B06BC0A91">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_DAF2614B06BC0A91">0.00</p>
+                </td>
+                <td>
+<p id="xzf_DAF2614B06BC0A91">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_DAF2614B06BC0A91" onclick="vipbank(this,'C5517C507E3B7842','23000.000000',5765806)"
+                       style="cursor:pointer;color:blue">23000.00</p>
+                </td>
+                <td>70364.55</td>
+                <td>
+                        <p id="yhkc_DAF2614B06BC0A91">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:44:18
+                </td>
+                <td>
+                    2023/3/14 0:44:35
+                </td>
+                <td>
+                    <p id="createBy_DAF2614B06BC0A91">ck2939</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765806');">
+                        <p id="Remark_5765806"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765806');">
+                        <p id="WebRemark_5765806">农业 张延海1.2a+代收台州 方涛 9000+天猫 2000</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>vip666</td>
+                <td title="MOUT4847057261934997883">
+                    xiaoxi1010<br />
+                </td>
+                <td>
+                    王新喜
+                </td>
+                
+                <td>
+                    
+                    <p>6212261718008661791</p>
+                </td>
+                <td>
+                    1500.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_16FC16C402A159B6">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_16FC16C402A159B6">0.00</p>
+                </td>
+                <td>
+<p id="xzf_16FC16C402A159B6">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_16FC16C402A159B6" onclick="vipbank(this,'73AD167623B84641','1500.000000',5765782)"
+                       style="cursor:pointer;color:blue">1500.00</p>
+                </td>
+                <td>17.14</td>
+                <td>
+                        <p id="yhkc_16FC16C402A159B6">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:43:46
+                </td>
+                <td>
+                    2023/3/14 0:43:54
+                </td>
+                <td>
+                    <p id="createBy_16FC16C402A159B6">ck2939</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765782');">
+                        <p id="Remark_5765782"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765782');">
+                        <p id="WebRemark_5765782">天猫</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>默认层</b></td>
+                <td>vip999</td>
+                <td title="MOUT5411672612974589233">
+                    z147896<br />
+                </td>
+                <td>
+                    雀照改
+                </td>
+                
+                <td>
+                    
+                    <p>6212812518001024219</p>
+                </td>
+                <td>
+                    160.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_800E68A417A22FF0">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_800E68A417A22FF0">0.00</p>
+                </td>
+                <td>
+<p id="xzf_800E68A417A22FF0">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_800E68A417A22FF0" onclick="vipbank(this,'1E5D58AA095BAEF8','160.000000',5765749)"
+                       style="cursor:pointer;color:blue">160.00</p>
+                </td>
+                <td>40.55</td>
+                <td>
+                        <p id="yhkc_800E68A417A22FF0">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>已确认</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:42:28
+                </td>
+                <td>
+                    2023/3/14 0:42:46
+                </td>
+                <td>
+                    <p id="createBy_800E68A417A22FF0">ck2939</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765749');">
+                        <p id="Remark_5765749"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765749');">
+                        <p id="WebRemark_5765749">顺为</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>顺为出款=&gt;M1001878</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>vip9</b></td>
+                <td>vip888</td>
+                <td title="MOUT4998150732408493307">
+                    mm0707<br />
+                </td>
+                <td>
+                    孟庆鑫
+                </td>
+                
+                <td>
+                    
+                    <p>6214673800041704636</p>
+                </td>
+                <td>
+                    22000.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_93F5721DF0C99C35">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_93F5721DF0C99C35">0.00</p>
+                </td>
+                <td>
+<p id="xzf_93F5721DF0C99C35">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_93F5721DF0C99C35" onclick="vipbank(this,'C5517C507E3B7842','22000.000000',5765718)"
+                       style="cursor:pointer;color:blue">22000.00</p>
+                </td>
+                <td>93364.55</td>
+                <td>
+                        <p id="yhkc_93F5721DF0C99C35">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:41:30
+                </td>
+                <td>
+                    2023/3/14 0:41:49
+                </td>
+                <td>
+                    <p id="createBy_93F5721DF0C99C35">ck2939k</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765718');">
+                        <p id="Remark_5765718"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765718');">
+                        <p id="WebRemark_5765718">云支付</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>wawzwacdl001</td>
+                <td title="MOUT5395779171379791410">
+                    mai199411<br />
+                </td>
+                <td>
+                    麦小童
+                </td>
+                
+                <td>
+                    
+                    <p>6222034301004034597</p>
+                </td>
+                <td>
+                    800.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_1DC85F1B0C999A76">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_1DC85F1B0C999A76">0.00</p>
+                </td>
+                <td>
+<p id="xzf_1DC85F1B0C999A76">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_1DC85F1B0C999A76" onclick="vipbank(this,'A48A69368D721C13','800.000000',5765663)"
+                       style="cursor:pointer;color:blue">800.00</p>
+                </td>
+                <td>100.91</td>
+                <td>
+                        <p id="yhkc_1DC85F1B0C999A76">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:40:05
+                </td>
+                <td>
+                    2023/3/14 0:40:26
+                </td>
+                <td>
+                    <p id="createBy_1DC85F1B0C999A76">ck2939a</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765663');">
+                        <p id="Remark_5765663"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765663');">
+                        <p id="WebRemark_5765663">法国</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>wawzwacdl001</td>
+                <td title="APPOUT5001110466971525407">
+                    zz999222zz<br />
+                </td>
+                <td>
+                    赵增
+                </td>
+                
+                <td>
+                    
+                    <p>6225212082679660</p>
+                </td>
+                <td>
+                    615.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_73E4A8276565C115">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_73E4A8276565C115">0.00</p>
+                </td>
+                <td>
+<p id="xzf_73E4A8276565C115">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_73E4A8276565C115" onclick="vipbank(this,'DFB88BA486DF2744','615.000000',5765600)"
+                       style="cursor:pointer;color:blue">615.00</p>
+                </td>
+                <td>30.20</td>
+                <td>
+                        <p id="yhkc_73E4A8276565C115">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:38:31
+                </td>
+                <td>
+                    2023/3/14 0:38:40
+                </td>
+                <td>
+                    <p id="createBy_73E4A8276565C115">ck2939b</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765600');">
+                        <p id="Remark_5765600"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765600');">
+                        <p id="WebRemark_5765600">法国</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>wawzwacdl001</td>
+                <td title="APPOUT4950117199635257285">
+                    yh928065<br />
+                </td>
+                <td>
+                    雍峻
+                </td>
+                
+                <td>
+                    
+                    <p>6214590791001686667</p>
+                </td>
+                <td>
+                    1000.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_E87DC823A08B509F">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_E87DC823A08B509F">0.00</p>
+                </td>
+                <td>
+<p id="xzf_E87DC823A08B509F">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_E87DC823A08B509F" onclick="vipbank(this,'4EAB1F154BBE73A9','1000.000000',5765540)"
+                       style="cursor:pointer;color:blue">1000.00</p>
+                </td>
+                <td>1119.39</td>
+                <td>
+                        <p id="yhkc_E87DC823A08B509F">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:37:33
+                </td>
+                <td>
+                    2023/3/14 0:37:50
+                </td>
+                <td>
+                    <p id="createBy_E87DC823A08B509F">ck2939k</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765540');">
+                        <p id="Remark_5765540"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765540');">
+                        <p id="WebRemark_5765540">狂飙</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>默认层</b></td>
+                <td>vip335</td>
+                <td title="MOUT5413395876877049274">
+                    whc8290<br />
+                </td>
+                <td>
+                    王海成
+                </td>
+                
+                <td>
+                    
+                    <p>6215340300810971581</p>
+                </td>
+                <td>
+                    800.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_C3364802EB33A197">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_C3364802EB33A197">0.00</p>
+                </td>
+                <td>
+<p id="xzf_C3364802EB33A197">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_C3364802EB33A197" onclick="vipbank(this,'2725EF9C4E552C39','800.000000',5765508)"
+                       style="cursor:pointer;color:blue">800.00</p>
+                </td>
+                <td>1.19</td>
+                <td>
+                        <p id="yhkc_C3364802EB33A197">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:36:51
+                </td>
+                <td>
+                    2023/3/14 0:37:08
+                </td>
+                <td>
+                    <p id="createBy_C3364802EB33A197">ck2939k</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765508');">
+                        <p id="Remark_5765508"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765508');">
+                        <p id="WebRemark_5765508">狂飙</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>wawzwacdl001</td>
+                <td title="APPOUT4985250093076593511">
+                    wht1987<br />
+                </td>
+                <td>
+                    武海涛
+                </td>
+                
+                <td>
+                    
+                    <p>6222083004000853552</p>
+                </td>
+                <td>
+                    263.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_40062FF14361EDF4">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_40062FF14361EDF4">0.00</p>
+                </td>
+                <td>
+<p id="xzf_40062FF14361EDF4">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_40062FF14361EDF4" onclick="vipbank(this,'DC5A501CA354C68A','263.000000',5765487)"
+                       style="cursor:pointer;color:blue">263.00</p>
+                </td>
+                <td>0.13</td>
+                <td>
+                        <p id="yhkc_40062FF14361EDF4">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:36:14
+                </td>
+                <td>
+                    2023/3/14 0:36:30
+                </td>
+                <td>
+                    <p id="createBy_40062FF14361EDF4">ck2939k</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765487');">
+                        <p id="Remark_5765487"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765487');">
+                        <p id="WebRemark_5765487">狂飙</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>vip0088</td>
+                <td title="APPOUT5282705035261036646">
+                    tangguozi<br />
+                </td>
+                <td>
+                    唐国智
+                </td>
+                
+                <td>
+                    
+                    <p>6228482848831783378</p>
+                </td>
+                <td>
+                    1000.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_4126CADA1C44A7B1">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_4126CADA1C44A7B1">0.00</p>
+                </td>
+                <td>
+<p id="xzf_4126CADA1C44A7B1">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_4126CADA1C44A7B1" onclick="vipbank(this,'4310A1425B6A62AF','1000.000000',5765464)"
+                       style="cursor:pointer;color:blue">1000.00</p>
+                </td>
+                <td>700.34</td>
+                <td>
+                        <p id="yhkc_4126CADA1C44A7B1">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:35:42
+                </td>
+                <td>
+                    2023/3/14 0:35:50
+                </td>
+                <td>
+                    <p id="createBy_4126CADA1C44A7B1">ck2939k</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765464');">
+                        <p id="Remark_5765464"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765464');">
+                        <p id="WebRemark_5765464">狂飙</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>vip1</b></td>
+                <td>vip999</td>
+                <td title="MOUT4793417051734534669">
+                    x0987654321<br />
+                </td>
+                <td>
+                    许钰洁
+                </td>
+                
+                <td>
+                    
+                    <p>6228481839116182676</p>
+                </td>
+                <td>
+                    1535.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_00DBD1A35CC5E357">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_00DBD1A35CC5E357">0.00</p>
+                </td>
+                <td>
+<p id="xzf_00DBD1A35CC5E357">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_00DBD1A35CC5E357" onclick="vipbank(this,'2767531ED73800FE','1535.000000',5765416)"
+                       style="cursor:pointer;color:blue">1535.00</p>
+                </td>
+                <td>0.20</td>
+                <td>
+                        <p id="yhkc_00DBD1A35CC5E357">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:34:11
+                </td>
+                <td>
+                    2023/3/14 0:34:37
+                </td>
+                <td>
+                    <p id="createBy_00DBD1A35CC5E357">ck2939k</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765416');">
+                        <p id="Remark_5765416"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765416');">
+                        <p id="WebRemark_5765416">法国</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>vip0088</td>
+                <td title="APPOUT5492571258823321388">
+                    momo1314<br />
+                </td>
+                <td>
+                    廖流明
+                </td>
+                
+                <td>
+                    
+                    <p>622908433136009914</p>
+                </td>
+                <td>
+                    700.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_8CEFA2EC3A7D04DF">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_8CEFA2EC3A7D04DF">0.00</p>
+                </td>
+                <td>
+<p id="xzf_8CEFA2EC3A7D04DF">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_8CEFA2EC3A7D04DF" onclick="vipbank(this,'FD91E4D353462C98','700.000000',5765373)"
+                       style="cursor:pointer;color:blue">700.00</p>
+                </td>
+                <td>92.73</td>
+                <td>
+                        <p id="yhkc_8CEFA2EC3A7D04DF">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:33:09
+                </td>
+                <td>
+                    2023/3/14 0:33:21
+                </td>
+                <td>
+                    <p id="createBy_8CEFA2EC3A7D04DF">ck2939</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765373');">
+                        <p id="Remark_5765373"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765373');">
+                        <p id="WebRemark_5765373">法国</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>vip315</td>
+                <td title="MOUT4643920936515420541">
+                    bjsxp1314<br />
+                </td>
+                <td>
+                    包杰
+                </td>
+                
+                <td>
+                    
+                    <p>6228480445875673771</p>
+                </td>
+                <td>
+                    150.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_664ED8771B734568">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_664ED8771B734568">0.00</p>
+                </td>
+                <td>
+<p id="xzf_664ED8771B734568">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_664ED8771B734568" onclick="vipbank(this,'1BDCFFFD42BE52DE','150.000000',5765370)"
+                       style="cursor:pointer;color:blue">150.00</p>
+                </td>
+                <td>1.16</td>
+                <td>
+                        <p id="yhkc_664ED8771B734568">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>已确认</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:33:04
+                </td>
+                <td>
+                    2023/3/14 0:33:16
+                </td>
+                <td>
+                    <p id="createBy_664ED8771B734568">ck2939b</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765370');">
+                        <p id="Remark_5765370"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765370');">
+                        <p id="WebRemark_5765370">顺为</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>顺为出款=&gt;M1001878</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>vip1</b></td>
+                <td>vip6688</td>
+                <td title="APPOUT4949206257359712411">
+                    ying666<br />
+                </td>
+                <td>
+                    邱开蕊
+                </td>
+                
+                <td>
+                    
+                    <p>6231900000216043444</p>
+                </td>
+                <td>
+                    6100.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_92DA6DAB554FEE0F">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_92DA6DAB554FEE0F">0.00</p>
+                </td>
+                <td>
+<p id="xzf_92DA6DAB554FEE0F">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_92DA6DAB554FEE0F" onclick="vipbank(this,'1B3BF4EAECD575D4','6100.000000',5765327)"
+                       style="cursor:pointer;color:blue">6100.00</p>
+                </td>
+                <td>451.08</td>
+                <td>
+                        <p id="yhkc_92DA6DAB554FEE0F">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:31:27
+                </td>
+                <td>
+                    2023/3/14 0:31:37
+                </td>
+                <td>
+                    <p id="createBy_92DA6DAB554FEE0F">ck2939</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765327');">
+                        <p id="Remark_5765327"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765327');">
+                        <p id="WebRemark_5765327">狂飙</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>vip1</b></td>
+                <td>vip888</td>
+                <td title="MOUT5097194901526195565">
+                    a357456<br />
+                </td>
+                <td>
+                    贾少光
+                </td>
+                
+                <td>
+                    
+                    <p>6222020200119939870</p>
+                </td>
+                <td>
+                    5232.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_AA5F1C7AEDEEB014">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_AA5F1C7AEDEEB014">0.00</p>
+                </td>
+                <td>
+<p id="xzf_AA5F1C7AEDEEB014">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_AA5F1C7AEDEEB014" onclick="vipbank(this,'68FF249C0ED24058','5232.000000',5765325)"
+                       style="cursor:pointer;color:blue">5232.00</p>
+                </td>
+                <td>3000.84</td>
+                <td>
+                        <p id="yhkc_AA5F1C7AEDEEB014">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:31:27
+                </td>
+                <td>
+                    2023/3/14 0:31:44
+                </td>
+                <td>
+                    <p id="createBy_AA5F1C7AEDEEB014">ck2939</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765325');">
+                        <p id="Remark_5765325"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765325');">
+                        <p id="WebRemark_5765325">天猫</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>vip0088</td>
+                <td title="APPOUT5190590124555141912">
+                    l19966710701<br />
+                </td>
+                <td>
+                    李家成
+                </td>
+                
+                <td>
+                    
+                    <p>6212263602079927018</p>
+                </td>
+                <td>
+                    10000.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_82405EEA209B46B2">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_82405EEA209B46B2">0.00</p>
+                </td>
+                <td>
+<p id="xzf_82405EEA209B46B2">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_82405EEA209B46B2" onclick="vipbank(this,'16B522F440EB1294','10000.000000',5765321)"
+                       style="cursor:pointer;color:blue">10000.00</p>
+                </td>
+                <td>1149.30</td>
+                <td>
+                        <p id="yhkc_82405EEA209B46B2">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:31:09
+                </td>
+                <td>
+                    2023/3/14 0:31:46
+                </td>
+                <td>
+                    <p id="createBy_82405EEA209B46B2">ck2939b</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765321');">
+                        <p id="Remark_5765321"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765321');">
+                        <p id="WebRemark_5765321">农业 张延海</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>vip7</b></td>
+                <td>vip999</td>
+                <td title="MOUT5085716808307045617">
+                    chilamzcc<br />
+                </td>
+                <td>
+                    招成梁
+                </td>
+                
+                <td>
+                    
+                    <p>6216697000001696073</p>
+                </td>
+                <td>
+                    12000.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_12EC9D23ACF4C26B">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_12EC9D23ACF4C26B">0.00</p>
+                </td>
+                <td>
+<p id="xzf_12EC9D23ACF4C26B">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_12EC9D23ACF4C26B" onclick="vipbank(this,'8E8ED53B4D071D5F','12000.000000',5765297)"
+                       style="cursor:pointer;color:blue">12000.00</p>
+                </td>
+                <td>3006.14</td>
+                <td>
+                        <p id="yhkc_12EC9D23ACF4C26B">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:30:40
+                </td>
+                <td>
+                    2023/3/14 0:30:52
+                </td>
+                <td>
+                    <p id="createBy_12EC9D23ACF4C26B">ck2939</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765297');">
+                        <p id="Remark_5765297"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765297');">
+                        <p id="WebRemark_5765297">利群</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>vip0088</td>
+                <td title="MOUT5378485359243631835">
+                    heminjian<br />
+                </td>
+                <td>
+                    何敏健
+                </td>
+                
+                <td>
+                    
+                    <p>TFVb7oJ4CjDpeqK4XNRw5m9o5QVpZTEFWN</p>
+                        <p>参考汇率：7.15</p>
+                        <p>虚拟币数量：208.39</p>
+                </td>
+                <td>
+                    1490.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_7C5BD35705533790">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_7C5BD35705533790">0.00</p>
+                </td>
+                <td>
+<p id="xzf_7C5BD35705533790">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_7C5BD35705533790" onclick="vipbank(this,'E80EFF0458A35F55','1490.000000',5765265)"
+                       style="cursor:pointer;color:blue">1490.00</p>
+                </td>
+                <td>6.46</td>
+                <td>
+                        <p id="yhkc_7C5BD35705533790">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:29:25
+                </td>
+                <td>
+                    2023/3/14 0:30:02
+                </td>
+                <td>
+                    <p id="createBy_7C5BD35705533790">ck2939k</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765265');">
+                        <p id="Remark_5765265"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765265');">
+                        <p id="WebRemark_5765265">usdt  出款</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>默认层</b></td>
+                <td>vip434</td>
+                <td title="MOUT5464932217428574371">
+                    alphazx1<br />
+                </td>
+                <td>
+                    张兴
+                </td>
+                
+                <td>
+                    
+                    <p>6214832811058259</p>
+                </td>
+                <td>
+                    170.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_70A845F8B455B7CA">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_70A845F8B455B7CA">0.00</p>
+                </td>
+                <td>
+<p id="xzf_70A845F8B455B7CA">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_70A845F8B455B7CA" onclick="vipbank(this,'E4D90F4B3A71FD13','170.000000',5765225)"
+                       style="cursor:pointer;color:blue">170.00</p>
+                </td>
+                <td>157.00</td>
+                <td>
+                        <p id="yhkc_70A845F8B455B7CA">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>已确认</td>
+                <td>
+ <span style="color:red">是</span>                </td>
+                <td>
+                    2023/3/14 0:27:59
+                </td>
+                <td>
+                    2023/3/14 0:28:39
+                </td>
+                <td>
+                    <p id="createBy_70A845F8B455B7CA">ck2939b</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765225');">
+                        <p id="Remark_5765225"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765225');">
+                        <p id="WebRemark_5765225">顺为</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>顺为出款=&gt;M1001878</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>vip196</td>
+                <td title="MOUT5353220928533620545">
+                    lf747282152<br />
+                </td>
+                <td>
+                    刘锋
+                </td>
+                
+                <td>
+                    
+                    <p>6228481136810043779</p>
+                </td>
+                <td>
+                    560.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_B1DE51C4218466BE">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_B1DE51C4218466BE">0.00</p>
+                </td>
+                <td>
+<p id="xzf_B1DE51C4218466BE">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_B1DE51C4218466BE" onclick="vipbank(this,'FC47BF0C2694FC59','560.000000',5765188)"
+                       style="cursor:pointer;color:blue">560.00</p>
+                </td>
+                <td>5.20</td>
+                <td>
+                        <p id="yhkc_B1DE51C4218466BE">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:26:49
+                </td>
+                <td>
+                    2023/3/14 0:27:00
+                </td>
+                <td>
+                    <p id="createBy_B1DE51C4218466BE">ck2939</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765188');">
+                        <p id="Remark_5765188"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765188');">
+                        <p id="WebRemark_5765188">天猫</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>涉嫌套利</b></td>
+                <td>wawzwacdl001</td>
+                <td title="APPOUT4727276415689423174">
+                    tt1996<br />
+                </td>
+                <td>
+                    赵依桐
+                </td>
+                
+                <td>
+                    
+                    <p>6212260404002110298</p>
+                </td>
+                <td>
+                    50.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_79B5C1DE9786D42C">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_79B5C1DE9786D42C">0.00</p>
+                </td>
+                <td>
+<p id="xzf_79B5C1DE9786D42C">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_79B5C1DE9786D42C" onclick="vipbank(this,'782E19E0C14D52F9','50.000000',5765125)"
+                       style="cursor:pointer;color:blue">50.00</p>
+                </td>
+                <td>500.00</td>
+                <td>
+                        <p id="yhkc_79B5C1DE9786D42C">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>已确认</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:24:56
+                </td>
+                <td>
+                    2023/3/14 0:25:17
+                </td>
+                <td>
+                    <p id="createBy_79B5C1DE9786D42C">ck2939</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765125');">
+                        <p id="Remark_5765125"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765125');">
+                        <p id="WebRemark_5765125">顺为</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>顺为出款=&gt;M1001878</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>wawzwacdl001</td>
+                <td title="APPOUT5103134449419165750">
+                    yh928065<br />
+                </td>
+                <td>
+                    雍峻
+                </td>
+                
+                <td>
+                    
+                    <p>6214590791001686667</p>
+                </td>
+                <td>
+                    4500.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_C1FBC684660EF83B">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_C1FBC684660EF83B">0.00</p>
+                </td>
+                <td>
+<p id="xzf_C1FBC684660EF83B">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_C1FBC684660EF83B" onclick="vipbank(this,'4EAB1F154BBE73A9','4500.000000',5765123)"
+                       style="cursor:pointer;color:blue">4500.00</p>
+                </td>
+                <td>1556.39</td>
+                <td>
+                        <p id="yhkc_C1FBC684660EF83B">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:24:48
+                </td>
+                <td>
+                    2023/3/14 0:25:00
+                </td>
+                <td>
+                    <p id="createBy_C1FBC684660EF83B">ck2939</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765123');">
+                        <p id="Remark_5765123"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765123');">
+                        <p id="WebRemark_5765123">狂飙</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>默认层</b></td>
+                <td>wawzwacdl001</td>
+                <td title="APPOUT5693082666096358550">
+                    wu087589<br />
+                </td>
+                <td>
+                    吴川
+                </td>
+                
+                <td>
+                    
+                    <p>6214820130017469754</p>
+                </td>
+                <td>
+                    1998.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_5C1893D6975A731B">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_5C1893D6975A731B">0.00</p>
+                </td>
+                <td>
+<p id="xzf_5C1893D6975A731B">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_5C1893D6975A731B" onclick="vipbank(this,'C8A212EB4C51DEFF','1998.000000',5765121)"
+                       style="cursor:pointer;color:blue">1998.00</p>
+                </td>
+                <td>502.60</td>
+                <td>
+                        <p id="yhkc_5C1893D6975A731B">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:24:46
+                </td>
+                <td>
+                    2023/3/14 0:24:56
+                </td>
+                <td>
+                    <p id="createBy_5C1893D6975A731B">ck2939</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765121');">
+                        <p id="Remark_5765121"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765121');">
+                        <p id="WebRemark_5765121">天猫</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>默认层</b></td>
+                <td>wawzwacdl001</td>
+                <td title="MOUT5209145088727354128">
+                    tange12345<br />
+                </td>
+                <td>
+                    谭佳俊
+                </td>
+                
+                <td>
+                    
+                    <p>6231891100137115205</p>
+                </td>
+                <td>
+                    430.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_3280BF477DD2466A">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_3280BF477DD2466A">0.00</p>
+                </td>
+                <td>
+<p id="xzf_3280BF477DD2466A">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_3280BF477DD2466A" onclick="vipbank(this,'A31EA36FF0388ED2','430.000000',5765113)"
+                       style="cursor:pointer;color:blue">430.00</p>
+                </td>
+                <td>207.67</td>
+                <td>
+                        <p id="yhkc_3280BF477DD2466A">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:24:35
+                </td>
+                <td>
+                    2023/3/14 0:24:49
+                </td>
+                <td>
+                    <p id="createBy_3280BF477DD2466A">ck2939</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765113');">
+                        <p id="Remark_5765113"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765113');">
+                        <p id="WebRemark_5765113">天猫</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>vip1</b></td>
+                <td>vip0088</td>
+                <td title="MOUT5558124301454862561">
+                    zz7758521<br />
+                </td>
+                <td>
+                    宁辛
+                </td>
+                
+                <td>
+                    
+                    <p>623059119301602642</p>
+                </td>
+                <td>
+                    882.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_C9AE737EF891C5B9">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_C9AE737EF891C5B9">0.00</p>
+                </td>
+                <td>
+<p id="xzf_C9AE737EF891C5B9">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_C9AE737EF891C5B9" onclick="vipbank(this,'17D16D511405D521','882.000000',5765105)"
+                       style="cursor:pointer;color:blue">882.00</p>
+                </td>
+                <td>0.62</td>
+                <td>
+                        <p id="yhkc_C9AE737EF891C5B9">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:24:24
+                </td>
+                <td>
+                    2023/3/14 0:24:37
+                </td>
+                <td>
+                    <p id="createBy_C9AE737EF891C5B9">ck2939a</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765105');">
+                        <p id="Remark_5765105"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765105');">
+                        <p id="WebRemark_5765105">法国</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>vip1</b></td>
+                <td>wawzwacdl001</td>
+                <td title="APPOUT5600983540052581260">
+                    y615954986<br />
+                </td>
+                <td>
+                    田建富
+                </td>
+                
+                <td>
+                    
+                    <p>6226202602488964</p>
+                </td>
+                <td>
+                    1000.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_B9BA62F024A1F474">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_B9BA62F024A1F474">0.00</p>
+                </td>
+                <td>
+<p id="xzf_B9BA62F024A1F474">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_B9BA62F024A1F474" onclick="vipbank(this,'F258C7809867A734','1000.000000',5765013)"
+                       style="cursor:pointer;color:blue">1000.00</p>
+                </td>
+                <td>60.06</td>
+                <td>
+                        <p id="yhkc_B9BA62F024A1F474">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:21:27
+                </td>
+                <td>
+                    2023/3/14 0:21:37
+                </td>
+                <td>
+                    <p id="createBy_B9BA62F024A1F474">ck2939</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765013');">
+                        <p id="Remark_5765013"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765013');">
+                        <p id="WebRemark_5765013">天猫</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+            <tr class="m_cen">
+                <td><b>筛选组</b></td>
+                <td>vip999</td>
+                <td title="MOUT5521633225976640974">
+                    a2897453818<br />
+                </td>
+                <td>
+                    黎雨政
+                </td>
+                
+                <td>
+                    
+                    <p>6217003270000178749</p>
+                </td>
+                <td>
+                    529.00
+                </td>
+                <td>
+
+
+                        <p id="sxf_27FB2623905BC5B1">0.00</p>
+
+                </td>
+                <td style="color:red">
+                        <p id="yhje_27FB2623905BC5B1">0.00</p>
+                </td>
+                <td>
+<p id="xzf_27FB2623905BC5B1">0.00</p>                 </td>
+
+                <td class="vipbank">
+                    <p id="ckje_27FB2623905BC5B1" onclick="vipbank(this,'FAC7D75908D13F86','529.000000',5765011)"
+                       style="cursor:pointer;color:blue">529.00</p>
+                </td>
+                <td>500.94</td>
+                <td>
+                        <p id="yhkc_27FB2623905BC5B1">否</p>
+                </td>
+                <td>出款成功</td>
+                <td>未使用</td>
+                <td>
+<span>否</span>                </td>
+                <td>
+                    2023/3/14 0:21:24
+                </td>
+                <td>
+                    2023/3/14 0:21:39
+                </td>
+                <td>
+                    <p id="createBy_27FB2623905BC5B1">ck2939</p>
+                </td>
+                    <td>
+                                <b style="color:green;">确认出款</b>
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765011');">
+                        <p id="Remark_5765011"></p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td class="vipbank" onclick="Stratified('5765011');">
+                        <p id="WebRemark_5765011">天猫</p>
+                        <input type="hidden" id="typeifram" value="0" />
+                    </td>
+                    <td>无</td>
+            </tr>
+    </table>
+    <table cellspacing="0" cellpadding="0" class="m_tab" id="VIPtable" hidden="hidden" style="background-color: #0E75B0; width:550px !important;margin:0;">
+        <tr class="m_title_over_co" style="background-color: #429CCe;">
+            <td colspan="4">会员银行账户资料</td>
+        </tr>
+        <tr>
+            <td style="width:80px;text-align:center;">会员姓名</td>
+            <td style="text-align:center;"></td>
+            <td style="width:80px;text-align:center;">银行名称</td>
+            <td style="text-align:center;"></td>
+        </tr>
+        <tr>
+            <td style="width:80px;text-align:center;">银行账号</td>
+            <td style="text-align:center;"></td>
+            <td style="width:80px;text-align:center;">省份</td>
+            <td style="text-align:center;"></td>
+        </tr>
+        <tr>
+            <td style="width:80px;text-align:center;">城市</td>
+            <td style="text-align:center;"></td>
+            <td style="width:80px;text-align:center;">联系电话</td>
+            <td style="text-align:center;"></td>
+        </tr>
+        <tr>
+            <td style="width:80px;text-align:center;">账号余额</td>
+            <td style="text-align:center;"></td>
+            <td style="width:80px;text-align:center;">备注</td>
+            <td style="text-align:center;"></td>
+        </tr>
+
+    </table>
+</div>
+
+
+<div id='pop-div' style="width: 0px; height:0px; border:0px;" class="pop-box">
+
+</div>
+<input id="Opentransfer" type="hidden" value="0" />
+<input id="caozuotype" type="hidden" value="" />
+<div style="display:block;height:38px;float: left;width: 100%;">&nbsp;</div>
+<div id="page1" class="bottomNav" style="margin-top:5px; text-align:center;"></div>
+
+<script src="/bundles/Layer/laypage?v=lNDYBXXe7hEjWKQNpjJN8ZtZeYR1rg3ieRCwKZK-POQ1"></script>
+
+<link href="/bundles/Layer/css?v=e2fA0wTPAd1w4OJwPUWmZMRi5m0Hxlq0O4t0IyOUAxY1" rel="stylesheet"/>
+
+<link href="/Scripts/layer/skin/layer.css?v=6b_YASglIWmK51UpZOZPw3d4DB_CLpwtR95HWs_vp2c1" rel="stylesheet"/>
+
+<link href="/Scripts/laydate/skins/dahong/laydate.css?v=te-rhBiL7VskRyIxQY3QR3YpwuuyxljoHxAY2gRuhhs1" rel="stylesheet"/>
+
+<script src="/bundles/Cash/Revenue_managementListOut?v=20gGBPk_bcQWSEEtCxtwf7LVmso5Kt4MSmo016mjsjc1"></script>
+
+<script src="/Scripts/select2.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $(".js-example-basic-single").select2();
+    });
+
+    function fswitch() {
+        if (window.Cookies.get('NewOutOrder') === 'true')
+            window.location.href = "/OrderManage/OutOrders";
+    };
+
+    $(function () {
+        $("#switch").click(function () {
+            window.Cookies.set('NewOutOrder', true, { expires: 7 });
+            window.location.href = "/OrderManage/OutOrders";
+        });
+        fswitch();
+
+        laypage({
+            cont: 'page1',
+            pages: '4245',
+            skip: true,
+            skin: '#AF0000',
+            curr: function () {
+                var page = location.search.match(/Page=(\d+)/);
+                return page ? page[1] : 1;
+            }(),
+            jump: function (e, first) {
+                if (!first) {
+                    layer.load();
+                    location.href = '?Page=' + e.curr + '&type=1';
+                }
+            }
+        });
+    })
+    //判断时间格式
+</script>
+    <script>
+        //修改备注
+        function Stratified(id) {
+            layer.open({
+                type: 2,
+                title: '修改备注',
+                shadeClose: true,
+                shade: false,
+                area: ['390px', '200px'],
+                content: ['/Cash/ModifyRemark?id=' + id, 'no'] //iframe的url
+            });
+        }
+        //
+        function xzfandyhkc(Id, xzf, yhkc) {
+            layer.open({
+                type: 2,
+                title: '修改出款',
+                shadeClose: true,
+                shade: false,
+                area: ['390px', '200px'],
+                content: ['/Cash/ModifyXzfAndYh?Id=' + Id + '&xzf=' + xzf + '&yhkc=' + yhkc, 'no'],
+            });
+        }
+
+        function openjihe(Uid, userName, begintime, endtime, outmoney) {
+            layer.open({
+                type: 2,
+                title: '即时稽核',
+                shadeClose: true,
+                shade: false,
+                area: ['100%', '100%'],
+                content: ['/Cash/NewJiShiJiHeList?Uid=' + Uid + '&username=' + userName + '&beginTime=' + begintime + '&endTime=' + endtime + "&outMoney=" + outmoney, 'yes'], //iframe的url
+            });
+        }
+
+        function Confirm_Out_money(Id, Page) {
+            if (confirm("确认出款？")) {
+                document.location = '/Cash/Confirm_Out_money?Id=' + Id + '&Page=' + Page;
+            }
+        }
+
+        function Cancel_Out_money(Id, Page) {
+            if (confirm("确认取消出款？")) {
+                document.location = '/Cash/Cancel_Out_money?Id=' + Id + '&Page=' + Page;
+            }
+        }
+
+        function Repudiate_Out_money(Id, Page) {
+            if (confirm("确认拒绝出款？")) {
+                document.location = '/Cash/Repudiate_Out_money?Id=' + Id + '&Page=' + Page;
+            }
+        }
+
+        function Ready_Out_money(Id, Page) {
+            if (confirm("是否预备出款？")) {
+                document.location = '/Cash/Ready_Out_money?Id=' + Id + '&Page=' + Page;
+            }
+        }
+
+        function Cancle_Ready_Out_money(Id, Page) {
+            if (confirm("是否取消预备出款？")) {
+                document.location = '/Cash/Cancle_Ready_Out_money?Id=' + Id + '&Page=' + Page;
+            }
+        }
+
+        function ClearFee(DeseId) {
+            if (confirm("确认清除手续费？")) {
+                document.location = 'ClearFee?DeseId=' + DeseId;
+            }
+        }
+
+        function copy(text) {
+            navigator.clipboard.writeText(text).then(function () {
+                layer.msg('复制成功！');
+            }, function (err) {
+                layer.msg('复制失败！');
+            });
+        }
+
+
+        function Opentransfer(Id) {
+            layer.open({
+                type: 2,
+                title: '选择出款支付',
+                shadeClose: true,
+                shade: false,
+                area: ['500px','500px'],
+                
+                content: ['/cash/transfer_Out_Money?Fid=' + Id], //iframe的url
+                end: function () {
+                    var a = $("#Opentransfer").val();
+                    if (a == 1) {
+                        setTimeout(function () {
+                            location.reload();
+                        }, 1000);
+                    }
+                }
+            });
+        }
+    </script>
+
+
+
+
+
+
+
+    
+</body>
+</html>

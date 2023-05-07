@@ -1,0 +1,2475 @@
+HTTP/1.1 200 OK
+Date: Tue, 25 Apr 2023 07:08:48 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Cache-Control: no-cache, no-store
+pragma: no-cache
+expires: -1
+vary: Accept-Encoding
+x-aspnetmvc-version: 5.2
+x-frame-options: SAMEORIGIN
+x-aspnet-version: 4.0.30319
+x-powered-by: ASP.NET
+CF-Cache-Status: DYNAMIC
+Report-To:
+{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=G49jAwUaMXLm1mLfG4u9l1eGD4Bh3YVnlBDA3pGqidPci%2BEbyIQmdsgNCYzZb5YeBEh5GanYXQqNflwFb74rvZ6dAbeLZK2hqJh%2BW4pwGiwWNgRaJyCEhu7IxqH6SXcRlADusXsugVYafQ%3D%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 7bd4c1c3fc5e6b9e-SIN
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+Content-Length: 119769
+
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会员帳號管理</title>
+    <link href="/style/stylecss?v=FgtxhRcNx4VePzlWJcGDR-DA-4infB4I-gBoz4LmQto1" rel="stylesheet" />
+    <link href="/style/admin/css?v=LmhkICRSeF1Zx3MGauOQ5Ow7aDYVMWtwBqicTWvwk741" rel="stylesheet" />
+
+    <script src="/bundles/jquery?v=84jPVsElpshPhhnrazGalF6xofB2x-MCYt7a9MMsgHM1"></script>
+
+    <script src="/bundles/jqueryval?v=7Sn5xO-3GWkjaclB7i_E6tXwHCz8kw0k_xfuwp9pBlc1"></script>
+
+
+</head>
+
+<body id="body">
+
+
+
+    <style type="text/css">
+        .bottomNav {
+            z-index: 999;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            _position: absolute;
+            _top: expression_r(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight);
+            overflow: visible;
+        }
+    </style>
+    <div id="con_wrap" style="overflow:hidden;height: 65px;">
+
+
+        <div class="con_menu" style="width:100% ; padding-top:-7px;">
+            <form action="/VIP/GetVipList" method="post">
+                <input name="__RequestVerificationToken" type="hidden"
+                    value="sk4Fu27Z_DD9ZaaPQQeTQhEqHnALP4B6gaadBhkkimxG0h6BCwY99xFHLtEawOch_MsM4X7BWaTOXjnaQsh8MJ4y_KRmMMBrEtRAEaJeyt41" />
+                <div class="input_002">会员帳號管理</div>&nbsp&nbsp
+                <label>所属代理：</label>
+                <input class="text-box single-line" id="Agent" name="Agent" style="width:80px" type="text" value="" />
+                <span>新增日期:</span>
+                <input type="checkbox" name="IsAddDate" value="true" />
+                从 <input class="laydate-icon Wdate valid" type="datetime" id="beginTime" name="Starttime"
+                    onclick="laydate()" value="2023-04-24" style="width:80px;" />
+                至 <input class="laydate-icon Wdate valid" type="datetime" id="endTime" name="Endtime"
+                    onclick="laydate()" value="2023-04-25" style="width:80px;" />
+                <b>在线：</b>
+                <select id="IsOnline" name="IsOnline">
+                    <option selected="selected" value="0">全部</option>
+                    <option value="1">在线</option>
+                </select>
+                <b>状态：</b>
+                <select id="Ustatus" name="Ustatus">
+                    <option selected="selected" value="28B5F3B340D24FEB">全部</option>
+                    <option value="49ECD275F3FD5963">启用</option>
+                    <option value="F903A38235C1ADBB">暂停</option>
+                    <option value="50A7B7609F8C4FF7">停用</option>
+                </select>
+                <b>双重验证：</b>
+                <select id="TwoFactor" name="TwoFactor">
+                    <option value="">全部</option>
+                    <option value="1">启用</option>
+                    <option value="0">停用</option>
+                </select>
+                <b>登录设备：</b>
+                <select id="LoginDevice" name="LoginDevice">
+                    <option value="">全部</option>
+                    <option value="0">Android</option>
+                    <option value="1">IOS</option>
+                    <option value="2">PC</option>
+                    <option value="3">H5</option>
+                </select>
+                <b>排序：</b>
+                <select id="Order" name="Order">
+                    <option selected="selected" value="9E34B49FDC5D33D9">新增日期</option>
+                    <option value="B0BA920033B4322EA1950A0076386C90">登录日期</option>
+                    <option value="E4146D4582987CC1">在线</option>
+                    <option value="E1B0D731485B4402">余额</option>
+                </select>
+
+                <select id="isdec" name="isdec">
+                    <option selected="selected" value="8DB6AFAF0C2CAA59">降幂（由大到小）</option>
+                    <option value="91FC8A16D3D5F9B9">升幂（由小到大）</option>
+                </select>
+
+                <select id="SearchSelect" name="SearchSelect">
+                    <option selected="selected" value="UserName">用户名</option>
+                    <option value="RealName">真实姓名</option>
+                    <option value="Telephone">手机</option>
+                    <option value="Email">邮箱</option>
+                    <option value="LoginIP">登录IP</option>
+                    <option value="AddIP">注册IP</option>
+                </select>
+
+                <select data-val="true" data-val-number="字段 Int32 必须是一个数字。" data-val-required="Int32 字段是必需的。"
+                    id="IsFuzzyquery" name="IsFuzzyquery">
+                    <option value="1">模糊查询</option>
+                    <option selected="selected" value="0">精确查询</option>
+                </select>
+
+                <input type="text" id="UserName" name="SearchText" style="width:100px" />
+                <input type="submit" class="za_button" name="append" value="搜索">
+                <input type="button" class="za_button" name="append" value="新增"
+                    onclick="document.location='/VIP/CreateVIP'">
+                每页显示:
+                <select id="PageSize" name="PageSize">
+                    <option value="5">5</option>
+                    <option value="20">20</option>
+                    <option selected="selected" value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="1000">1000</option>
+                    <option value="2000">2000</option>
+                </select>
+            </form>
+        </div>
+    </div>
+    <p style="padding:10px">
+        <b>总人数(<b style="color:red;font-size:small">241573</b>)</b>
+        <b style="padding-left:10px">在线人数<b style="color:red;font-size:small">（786）</b></b>
+        <b style="padding-left:10px">会员总余额<b style="color:red;font-size:small">（1832982.60)</b></b>
+    </p>
+    <div class="content">
+        <table cellspacing="0" cellpadding="0" style="background-color: #0E75B0" class="m_tab" id="table">
+            <tr class="m_title_over_co" style="background-color: #429CCD">
+                <td style="width:40px">序号</td>
+                <td class="td" style="width:30px">状态</td>
+                <td>会员名称</td>
+                <td>真实姓名</td>
+                <td>所属代理商</td>
+                <td>余额</td>
+                <td>注册地址</td>
+                <td>注册IP</td>
+                <td>登陆IP</td>
+                <td>登陆日期</td>
+                <td>新增日期</td>
+                <td>双重验证</td>
+                <td>登录设备</td>
+                <td>账号状态</td>
+                <td>功能</td>
+            </tr>
+            <tr class="m_cen">
+                <td>1</td>
+                <td>
+                    <a href="#" id="BA8C04CFAE9B9257" onclick="return OffOnLine('BA8C04CFAE9B9257','xxx134134');">在线</a>
+                </td>
+                <td>xxx134134</td>
+                <td>黄云凯</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>223.104.12.209(中国|0|云南省|玉溪市|移动)</td>
+                <td>223.104.12.209(中国|0|云南省|玉溪市|移动)</td>
+                <td>
+                    2023/4/25 2:58:15
+                </td>
+                <td>
+                    2023/4/25 2:58:15
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=xxx134134&id=243375&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=xxx134134&id=243375&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/BA8C04CFAE9B9257"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/BA8C04CFAE9B9257"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=xxx134134" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=xxx134134&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=BA8C04CFAE9B9257">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>2</td>
+                <td>
+                    <a href="#" id="DF0C9FE6C6FEB8D5"
+                        onclick="return OffOnLine('DF0C9FE6C6FEB8D5','htyge77316');">在线</a>
+                </td>
+                <td>htyge77316</td>
+                <td>赵箫杨</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i3.com/NewMobile </td>
+                <td>223.214.230.107(中国|0|安徽省|滁州市|电信)</td>
+                <td>223.214.230.107(中国|0|安徽省|滁州市|电信)</td>
+                <td>
+                    2023/4/25 2:58:11
+                </td>
+                <td>
+                    2023/4/25 2:58:10
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=htyge77316&id=243374&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=htyge77316&id=243374&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/DF0C9FE6C6FEB8D5"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/DF0C9FE6C6FEB8D5"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=htyge77316" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=htyge77316&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=DF0C9FE6C6FEB8D5">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>3</td>
+                <td>
+                    <a href="#" id="3C5DF383A7600FB2" onclick="return OffOnLine('3C5DF383A7600FB2','wxy888777');">在线</a>
+                </td>
+                <td>wxy888777</td>
+                <td>吴雪英</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>124.160.214.189(中国|0|浙江省|杭州市|联通)</td>
+                <td>124.160.214.189(中国|0|浙江省|杭州市|联通)</td>
+                <td>
+                    2023/4/25 2:58:07
+                </td>
+                <td>
+                    2023/4/25 2:58:07
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=wxy888777&id=243373&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=wxy888777&id=243373&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/3C5DF383A7600FB2"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/3C5DF383A7600FB2"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=wxy888777" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=wxy888777&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=3C5DF383A7600FB2">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>4</td>
+                <td>
+                    <a href="#" id="5D76B327EE1C14E0" onclick="return OffOnLine('5D76B327EE1C14E0','hgtb26852');">在线</a>
+                </td>
+                <td>hgtb26852</td>
+                <td>宋成鑫</td>
+                <td>wawzwacdl001</td>
+                <td>0.00</td>
+                <td>PC端: www21030045210.2939n6.com/NewWeb </td>
+                <td>61.156.170.137(中国|0|山东省|潍坊市|联通)</td>
+                <td>61.156.170.137(中国|0|山东省|潍坊市|联通)</td>
+                <td>
+                    2023/4/25 2:58:06
+                </td>
+                <td>
+                    2023/4/25 2:58:06
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>PC</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=hgtb26852&id=243372&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=hgtb26852&id=243372&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/5D76B327EE1C14E0"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/5D76B327EE1C14E0"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=hgtb26852" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=hgtb26852&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=5D76B327EE1C14E0">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>5</td>
+                <td>
+                    <a href="#" id="689705CA91CA4107"
+                        onclick="return OffOnLine('689705CA91CA4107','dxsnr97481');">在线</a>
+                </td>
+                <td>dxsnr97481</td>
+                <td>韩真</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i3.com/NewMobile </td>
+                <td>223.214.228.9(中国|0|安徽省|滁州市|电信)</td>
+                <td>223.214.228.9(中国|0|安徽省|滁州市|电信)</td>
+                <td>
+                    2023/4/25 2:58:05
+                </td>
+                <td>
+                    2023/4/25 2:58:05
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=dxsnr97481&id=243371&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=dxsnr97481&id=243371&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/689705CA91CA4107"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/689705CA91CA4107"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=dxsnr97481" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=dxsnr97481&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=689705CA91CA4107">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>6</td>
+                <td>
+                    <a href="#" id="0EB070A676FFDE4D" onclick="return OffOnLine('0EB070A676FFDE4D','ge39764');">在线</a>
+                </td>
+                <td>ge39764</td>
+                <td>李雨香</td>
+                <td>wawzwacdl001</td>
+                <td>0.00</td>
+                <td>PC端: www15631239156.2939n6.com/NewWeb </td>
+                <td>60.184.242.10(中国|0|浙江省|丽水市|电信)</td>
+                <td>60.184.242.10(中国|0|浙江省|丽水市|电信)</td>
+                <td>
+                    2023/4/25 2:57:59
+                </td>
+                <td>
+                    2023/4/25 2:57:59
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>PC</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=ge39764&id=243370&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=ge39764&id=243370&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/0EB070A676FFDE4D"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/0EB070A676FFDE4D"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=ge39764" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=ge39764&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=0EB070A676FFDE4D">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>7</td>
+                <td>
+                    <a href="#" id="EB69A6D63195BA96" onclick="return OffOnLine('EB69A6D63195BA96','cai39048');">在线</a>
+                </td>
+                <td>cai39048</td>
+                <td>游明丽</td>
+                <td>wawzwacdl001</td>
+                <td>0.00</td>
+                <td>PC端: www15631239156.2939n6.com/NewWeb </td>
+                <td>115.207.40.46(中国|0|浙江省|衢州市|电信)</td>
+                <td>115.207.40.46(中国|0|浙江省|衢州市|电信)</td>
+                <td>
+                    2023/4/25 2:57:41
+                </td>
+                <td>
+                    2023/4/25 2:57:40
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>PC</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=cai39048&id=243369&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=cai39048&id=243369&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/EB69A6D63195BA96"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/EB69A6D63195BA96"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=cai39048" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=cai39048&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=EB69A6D63195BA96">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>8</td>
+                <td>
+                    <a href="#" id="96B2F50AE60C5E68" onclick="return OffOnLine('96B2F50AE60C5E68','lhg12345');">在线</a>
+                </td>
+                <td>lhg12345</td>
+                <td>李华国</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>119.62.124.159(中国|0|云南省|昆明市|联通)</td>
+                <td>119.62.124.159(中国|0|云南省|昆明市|联通)</td>
+                <td>
+                    2023/4/25 2:57:32
+                </td>
+                <td>
+                    2023/4/25 2:57:32
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=lhg12345&id=243368&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=lhg12345&id=243368&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/96B2F50AE60C5E68"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/96B2F50AE60C5E68"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=lhg12345" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=lhg12345&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=96B2F50AE60C5E68">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>9</td>
+                <td>
+                    <a href="#" id="9495A7F078FEE809" onclick="return OffOnLine('9495A7F078FEE809','zi91001');">在线</a>
+                </td>
+                <td>zi91001</td>
+                <td>刘小小</td>
+                <td>wawzwacdl001</td>
+                <td>0.00</td>
+                <td>PC端: www15631239156.2939n6.com/NewWeb </td>
+                <td>27.29.157.6(中国|0|湖北省|襄阳|电信)</td>
+                <td>27.29.157.6(中国|0|湖北省|襄阳|电信)</td>
+                <td>
+                    2023/4/25 2:57:06
+                </td>
+                <td>
+                    2023/4/25 2:57:06
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>PC</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=zi91001&id=243367&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=zi91001&id=243367&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/9495A7F078FEE809"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/9495A7F078FEE809"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=zi91001" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=zi91001&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=9495A7F078FEE809">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>10</td>
+                <td>
+                    <a href="#" id="E1576EC35238AF23" onclick="return OffOnLine('E1576EC35238AF23','cvbfgh123');">在线</a>
+                </td>
+                <td>cvbfgh123</td>
+                <td>赵德镇</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>223.74.68.41(中国|0|广东省|广州市|移动)</td>
+                <td>223.74.68.41(中国|0|广东省|广州市|移动)</td>
+                <td>
+                    2023/4/25 2:56:46
+                </td>
+                <td>
+                    2023/4/25 2:56:46
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=cvbfgh123&id=243366&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=cvbfgh123&id=243366&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/E1576EC35238AF23"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/E1576EC35238AF23"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=cvbfgh123" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=cvbfgh123&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=E1576EC35238AF23">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>11</td>
+                <td>
+                    <a href="#" id="3292E8110F1FE71A"
+                        onclick="return OffOnLine('3292E8110F1FE71A','zhou3031125');">在线</a>
+                </td>
+                <td>zhou3031125</td>
+                <td>武洋</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>PC端: 2939i1.com/NewWeb </td>
+                <td>118.74.23.255(中国|0|山西省|晋中市|联通)</td>
+                <td>118.74.23.255(中国|0|山西省|晋中市|联通)</td>
+                <td>
+                    2023/4/25 2:56:45
+                </td>
+                <td>
+                    2023/4/25 2:56:44
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>PC</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=zhou3031125&id=243365&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=zhou3031125&id=243365&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/3292E8110F1FE71A"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/3292E8110F1FE71A"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=zhou3031125" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=zhou3031125&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=3292E8110F1FE71A">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>12</td>
+                <td>
+                    <a style="color:#837d7d">離線</a>
+                </td>
+                <td>l390400</td>
+                <td>林明</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939l4.com/NewMobile </td>
+                <td>117.181.115.60(中国|0|广西|贵港市|移动)</td>
+                <td>117.181.115.60(中国|0|广西|贵港市|移动)</td>
+                <td>
+                    2023/4/25 2:56:33
+                </td>
+                <td>
+                    2023/4/25 2:56:33
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=l390400&id=243364&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=l390400&id=243364&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/F0AACC6FF8FD0062"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/F0AACC6FF8FD0062"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=l390400" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=l390400&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=F0AACC6FF8FD0062">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>13</td>
+                <td>
+                    <a href="#" id="F7A202047A23D782"
+                        onclick="return OffOnLine('F7A202047A23D782','uffte99254');">在线</a>
+                </td>
+                <td>uffte99254</td>
+                <td>杨丽</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i3.com/NewMobile </td>
+                <td>223.244.165.5(中国|0|安徽省|滁州市|电信)</td>
+                <td>223.244.165.5(中国|0|安徽省|滁州市|电信)</td>
+                <td>
+                    2023/4/25 2:56:12
+                </td>
+                <td>
+                    2023/4/25 2:56:12
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=uffte99254&id=243363&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=uffte99254&id=243363&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/F7A202047A23D782"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/F7A202047A23D782"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=uffte99254" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=uffte99254&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=F7A202047A23D782">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>14</td>
+                <td>
+                    <a href="#" id="C0AF7FD43BD5B5F7"
+                        onclick="return OffOnLine('C0AF7FD43BD5B5F7','lnhrp28943');">在线</a>
+                </td>
+                <td>lnhrp28943</td>
+                <td>伍洁梅</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>223.214.229.180(中国|0|安徽省|滁州市|电信)</td>
+                <td>223.214.229.180(中国|0|安徽省|滁州市|电信)</td>
+                <td>
+                    2023/4/25 2:56:07
+                </td>
+                <td>
+                    2023/4/25 2:56:07
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=lnhrp28943&id=243362&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=lnhrp28943&id=243362&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/C0AF7FD43BD5B5F7"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/C0AF7FD43BD5B5F7"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=lnhrp28943" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=lnhrp28943&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=C0AF7FD43BD5B5F7">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>15</td>
+                <td>
+                    <a href="#" id="70C8646D10C1171E"
+                        onclick="return OffOnLine('70C8646D10C1171E','zj1859170506');">在线</a>
+                </td>
+                <td>zj1859170506</td>
+                <td>周杰</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>122.96.46.37(中国|0|江苏省|南京市|联通)</td>
+                <td>122.96.46.37(中国|0|江苏省|南京市|联通)</td>
+                <td>
+                    2023/4/25 2:57:33
+                </td>
+                <td>
+                    2023/4/25 2:56:06
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=zj1859170506&id=243361&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=zj1859170506&id=243361&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/70C8646D10C1171E"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/70C8646D10C1171E"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=zj1859170506" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=zj1859170506&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=70C8646D10C1171E">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>16</td>
+                <td>
+                    <a href="#" id="B3B4403D72A702B9" onclick="return OffOnLine('B3B4403D72A702B9','huan82606');">在线</a>
+                </td>
+                <td>huan82606</td>
+                <td>刘月</td>
+                <td>wawzwacdl001</td>
+                <td>0.00</td>
+                <td>PC端: www15631239156.2939n6.com/NewWeb </td>
+                <td>113.133.8.42(中国|0|陕西省|延安市|电信)</td>
+                <td>113.133.8.42(中国|0|陕西省|延安市|电信)</td>
+                <td>
+                    2023/4/25 2:55:57
+                </td>
+                <td>
+                    2023/4/25 2:55:56
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>PC</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=huan82606&id=243360&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=huan82606&id=243360&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/B3B4403D72A702B9"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/B3B4403D72A702B9"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=huan82606" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=huan82606&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=B3B4403D72A702B9">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>17</td>
+                <td>
+                    <a href="#" id="CAEC347023DB4346"
+                        onclick="return OffOnLine('CAEC347023DB4346','z150306243');">在线</a>
+                </td>
+                <td>z150306243</td>
+                <td>张猛</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>220.195.84.140(中国|0|内蒙古|0|联通)</td>
+                <td>220.195.84.140(中国|0|内蒙古|0|联通)</td>
+                <td>
+                    2023/4/25 3:04:09
+                </td>
+                <td>
+                    2023/4/25 2:55:32
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=z150306243&id=243359&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=z150306243&id=243359&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/CAEC347023DB4346"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/CAEC347023DB4346"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=z150306243" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=z150306243&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=CAEC347023DB4346">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>18</td>
+                <td>
+                    <a href="#" id="E26192E7BE5FAEDC" onclick="return OffOnLine('E26192E7BE5FAEDC','l2997193');">在线</a>
+                </td>
+                <td>l2997193</td>
+                <td>林伟亮</td>
+                <td>vip666</td>
+                <td>0.00</td>
+                <td>手机端: 88821037545210.2939aa1.com/NewMobile </td>
+                <td>114.92.84.66(中国|0|上海|上海市|电信)</td>
+                <td>114.92.84.66(中国|0|上海|上海市|电信)</td>
+                <td>
+                    2023/4/25 2:55:26
+                </td>
+                <td>
+                    2023/4/25 2:55:26
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=l2997193&id=243358&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=l2997193&id=243358&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/E26192E7BE5FAEDC"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/E26192E7BE5FAEDC"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=l2997193" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=l2997193&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=E26192E7BE5FAEDC">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>19</td>
+                <td>
+                    <a href="#" id="7FA5FE2C30ECF035" onclick="return OffOnLine('7FA5FE2C30ECF035','gong54034');">在线</a>
+                </td>
+                <td>gong54034</td>
+                <td>詹李霞</td>
+                <td>wawzwacdl001</td>
+                <td>0.00</td>
+                <td>PC端: www15631239156.2939n6.com/NewWeb </td>
+                <td>42.57.150.169(中国|0|辽宁省|锦州市|联通)</td>
+                <td>42.57.150.169(中国|0|辽宁省|锦州市|联通)</td>
+                <td>
+                    2023/4/25 2:55:19
+                </td>
+                <td>
+                    2023/4/25 2:55:19
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>PC</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=gong54034&id=243357&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=gong54034&id=243357&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/7FA5FE2C30ECF035"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/7FA5FE2C30ECF035"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=gong54034" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=gong54034&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=7FA5FE2C30ECF035">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>20</td>
+                <td>
+                    <a href="#" id="3A4738654097390C"
+                        onclick="return OffOnLine('3A4738654097390C','zhong74454');">在线</a>
+                </td>
+                <td>zhong74454</td>
+                <td>杨丹</td>
+                <td>wawzwacdl001</td>
+                <td>0.00</td>
+                <td>PC端: www15631239156.2939n6.com/NewWeb </td>
+                <td>115.207.247.66(中国|0|浙江省|湖州市|电信)</td>
+                <td>115.207.247.66(中国|0|浙江省|湖州市|电信)</td>
+                <td>
+                    2023/4/25 2:54:59
+                </td>
+                <td>
+                    2023/4/25 2:54:59
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>PC</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=zhong74454&id=243356&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=zhong74454&id=243356&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/3A4738654097390C"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/3A4738654097390C"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=zhong74454" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=zhong74454&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=3A4738654097390C">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>21</td>
+                <td>
+                    <a href="#" id="959D20ABB58D5D7C" onclick="return OffOnLine('959D20ABB58D5D7C','ywh216349');">在线</a>
+                </td>
+                <td>ywh216349</td>
+                <td>普文明</td>
+                <td>sms888</td>
+                <td>39.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>119.62.124.159(中国|0|云南省|昆明市|联通)</td>
+                <td>14.204.0.191(中国|0|云南省|昆明市|联通)</td>
+                <td>
+                    2023/4/25 3:03:57
+                </td>
+                <td>
+                    2023/4/25 2:54:56
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=ywh216349&id=243355&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=ywh216349&id=243355&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/959D20ABB58D5D7C"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/959D20ABB58D5D7C"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=ywh216349" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=ywh216349&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=959D20ABB58D5D7C">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>22</td>
+                <td>
+                    <a href="#" id="9D66EC7DB73D53DF" onclick="return OffOnLine('9D66EC7DB73D53DF','djr131420');">在线</a>
+                </td>
+                <td>djr131420</td>
+                <td>段金蕊</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: android </td>
+                <td>220.197.239.26中国|0|云南省|0|联通</td>
+                <td>220.197.239.26中国|0|云南省|0|联通</td>
+                <td>
+                    2023/4/25 2:54:50
+                </td>
+                <td>
+                    2023/4/25 2:54:50
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>Android</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=djr131420&id=243354&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=djr131420&id=243354&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/9D66EC7DB73D53DF"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/9D66EC7DB73D53DF"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=djr131420" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=djr131420&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=9D66EC7DB73D53DF">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>23</td>
+                <td>
+                    <a href="#" id="DC9C6C6774317AAA"
+                        onclick="return OffOnLine('DC9C6C6774317AAA','zhang14644');">在线</a>
+                </td>
+                <td>zhang14644</td>
+                <td>李燕</td>
+                <td>wawzwacdl001</td>
+                <td>0.00</td>
+                <td>PC端: www15631239156.2939n6.com/NewWeb </td>
+                <td>115.206.62.202(中国|0|浙江省|杭州市|电信)</td>
+                <td>115.206.62.202(中国|0|浙江省|杭州市|电信)</td>
+                <td>
+                    2023/4/25 2:54:45
+                </td>
+                <td>
+                    2023/4/25 2:54:45
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>PC</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=zhang14644&id=243353&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=zhang14644&id=243353&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/DC9C6C6774317AAA"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/DC9C6C6774317AAA"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=zhang14644" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=zhang14644&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=DC9C6C6774317AAA">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>24</td>
+                <td>
+                    <a href="#" id="0851FE001D4A3494" onclick="return OffOnLine('0851FE001D4A3494','hx8481');">在线</a>
+                </td>
+                <td>hx8481</td>
+                <td>郝向前</td>
+                <td>wawzwacdl001</td>
+                <td>0.00</td>
+                <td>PC端: www18225242182.2939n8.com/NewWeb </td>
+                <td>113.14.131.174(中国|0|广西|桂林市|电信)</td>
+                <td>113.14.131.174(中国|0|广西|桂林市|电信)</td>
+                <td>
+                    2023/4/25 2:54:40
+                </td>
+                <td>
+                    2023/4/25 2:54:40
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>PC</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=hx8481&id=243352&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=hx8481&id=243352&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/0851FE001D4A3494"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/0851FE001D4A3494"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=hx8481" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=hx8481&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=0851FE001D4A3494">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>25</td>
+                <td>
+                    <a href="#" id="8905CE2F20FBCACF" onclick="return OffOnLine('8905CE2F20FBCACF','sang04162');">在线</a>
+                </td>
+                <td>sang04162</td>
+                <td>周永盛</td>
+                <td>wawzwacdl001</td>
+                <td>0.00</td>
+                <td>PC端: www15631239156.2939n6.com/NewWeb </td>
+                <td>222.246.230.143(中国|0|湖南省|郴州市|电信)</td>
+                <td>222.246.230.143(中国|0|湖南省|郴州市|电信)</td>
+                <td>
+                    2023/4/25 2:54:35
+                </td>
+                <td>
+                    2023/4/25 2:54:35
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>PC</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=sang04162&id=243351&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=sang04162&id=243351&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/8905CE2F20FBCACF"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/8905CE2F20FBCACF"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=sang04162" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=sang04162&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=8905CE2F20FBCACF">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>26</td>
+                <td>
+                    <a href="#" id="939295FBADEA5801" onclick="return OffOnLine('939295FBADEA5801','xiuche112');">在线</a>
+                </td>
+                <td>xiuche112</td>
+                <td>蔡松松</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>58.252.5.102(中国|0|广东省|东莞市|联通)</td>
+                <td>58.252.5.102(中国|0|广东省|东莞市|联通)</td>
+                <td>
+                    2023/4/25 2:54:17
+                </td>
+                <td>
+                    2023/4/25 2:54:17
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=xiuche112&id=243350&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=xiuche112&id=243350&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/939295FBADEA5801"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/939295FBADEA5801"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=xiuche112" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=xiuche112&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=939295FBADEA5801">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>27</td>
+                <td>
+                    <a href="#" id="B73530C5C107EC08"
+                        onclick="return OffOnLine('B73530C5C107EC08','s15670108537');">在线</a>
+                </td>
+                <td>s15670108537</td>
+                <td>王红梅</td>
+                <td>sms888</td>
+                <td>39.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>123.8.122.163(中国|0|河南省|濮阳市|联通)</td>
+                <td>123.8.122.163(中国|0|河南省|濮阳市|联通)</td>
+                <td>
+                    2023/4/25 3:04:30
+                </td>
+                <td>
+                    2023/4/25 2:54:14
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=s15670108537&id=243349&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=s15670108537&id=243349&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/B73530C5C107EC08"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/B73530C5C107EC08"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=s15670108537" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=s15670108537&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=B73530C5C107EC08">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>28</td>
+                <td>
+                    <a href="#" id="7229E77F4A39BE3C"
+                        onclick="return OffOnLine('7229E77F4A39BE3C','ucvxf51305');">在线</a>
+                </td>
+                <td>ucvxf51305</td>
+                <td>钟欣雨</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i3.com/NewMobile </td>
+                <td>223.214.230.118(中国|0|安徽省|滁州市|电信)</td>
+                <td>223.214.230.118(中国|0|安徽省|滁州市|电信)</td>
+                <td>
+                    2023/4/25 2:54:05
+                </td>
+                <td>
+                    2023/4/25 2:54:05
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=ucvxf51305&id=243348&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=ucvxf51305&id=243348&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/7229E77F4A39BE3C"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/7229E77F4A39BE3C"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=ucvxf51305" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=ucvxf51305&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=7229E77F4A39BE3C">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>29</td>
+                <td>
+                    <a href="#" id="BACEE8B7D81C024B"
+                        onclick="return OffOnLine('BACEE8B7D81C024B','luvwv18515');">在线</a>
+                </td>
+                <td>luvwv18515</td>
+                <td>邓子豪</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i3.com/NewMobile </td>
+                <td>223.214.231.63(中国|0|安徽省|滁州市|电信)</td>
+                <td>223.214.231.63(中国|0|安徽省|滁州市|电信)</td>
+                <td>
+                    2023/4/25 2:54:00
+                </td>
+                <td>
+                    2023/4/25 2:54:00
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=luvwv18515&id=243347&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=luvwv18515&id=243347&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/BACEE8B7D81C024B"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/BACEE8B7D81C024B"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=luvwv18515" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=luvwv18515&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=BACEE8B7D81C024B">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>30</td>
+                <td>
+                    <a href="#" id="805DD4DD8710808F"
+                        onclick="return OffOnLine('805DD4DD8710808F','qq842140016');">在线</a>
+                </td>
+                <td>qq842140016</td>
+                <td>代剑涛</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>112.97.87.47(中国|0|广东省|深圳市|联通)</td>
+                <td>112.97.87.47中国|0|广东省|深圳市|联通</td>
+                <td>
+                    2023/4/25 3:03:59
+                </td>
+                <td>
+                    2023/4/25 2:53:59
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>Android</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=qq842140016&id=243346&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=qq842140016&id=243346&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/805DD4DD8710808F"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/805DD4DD8710808F"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=qq842140016" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=qq842140016&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=805DD4DD8710808F">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>31</td>
+                <td>
+                    <a href="#" id="1510D9D0C44039CF" onclick="return OffOnLine('1510D9D0C44039CF','wxxxx11');">在线</a>
+                </td>
+                <td>wxxxx11</td>
+                <td>吴限</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>218.12.13.98(中国|0|河北省|石家庄市|联通)</td>
+                <td>218.12.13.98(中国|0|河北省|石家庄市|联通)</td>
+                <td>
+                    2023/4/25 2:57:03
+                </td>
+                <td>
+                    2023/4/25 2:53:41
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=wxxxx11&id=243345&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=wxxxx11&id=243345&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/1510D9D0C44039CF"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/1510D9D0C44039CF"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=wxxxx11" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=wxxxx11&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=1510D9D0C44039CF">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>32</td>
+                <td>
+                    <a href="#" id="E61A36C135BB1A64" onclick="return OffOnLine('E61A36C135BB1A64','lfm123123');">在线</a>
+                </td>
+                <td>lfm123123</td>
+                <td>白建军</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>183.224.136.120(中国|0|云南省|玉溪市|移动)</td>
+                <td>183.224.136.120(中国|0|云南省|玉溪市|移动)</td>
+                <td>
+                    2023/4/25 2:57:52
+                </td>
+                <td>
+                    2023/4/25 2:53:31
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=lfm123123&id=243344&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=lfm123123&id=243344&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/E61A36C135BB1A64"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/E61A36C135BB1A64"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=lfm123123" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=lfm123123&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=E61A36C135BB1A64">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>33</td>
+                <td>
+                    <a href="#" id="76C791237B486F65" onclick="return OffOnLine('76C791237B486F65','she40344');">在线</a>
+                </td>
+                <td>she40344</td>
+                <td>李灿灿</td>
+                <td>wawzwacdl001</td>
+                <td>0.00</td>
+                <td>PC端: www15631239156.2939n6.com/NewWeb </td>
+                <td>42.87.85.37(中国|0|辽宁省|朝阳市|联通)</td>
+                <td>42.87.85.37(中国|0|辽宁省|朝阳市|联通)</td>
+                <td>
+                    2023/4/25 2:53:01
+                </td>
+                <td>
+                    2023/4/25 2:53:01
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>PC</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=she40344&id=243343&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=she40344&id=243343&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/76C791237B486F65"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/76C791237B486F65"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=she40344" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=she40344&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=76C791237B486F65">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>34</td>
+                <td>
+                    <a href="#" id="1B45CA6069061CFB" onclick="return OffOnLine('1B45CA6069061CFB','lxz999888');">在线</a>
+                </td>
+                <td>lxz999888</td>
+                <td>黎孝政</td>
+                <td>vip999</td>
+                <td>0.00</td>
+                <td>手机端: 88821037545210.2939aa1.com/NewMobile </td>
+                <td>39.129.249.73(中国|0|云南省|昆明市|移动)</td>
+                <td>39.129.249.73(中国|0|云南省|昆明市|移动)</td>
+                <td>
+                    2023/4/25 2:52:58
+                </td>
+                <td>
+                    2023/4/25 2:52:57
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=lxz999888&id=243342&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=lxz999888&id=243342&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/1B45CA6069061CFB"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/1B45CA6069061CFB"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=lxz999888" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=lxz999888&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=1B45CA6069061CFB">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>35</td>
+                <td>
+                    <a href="#" id="5056FB6FA3E92B14" onclick="return OffOnLine('5056FB6FA3E92B14','qm032173');">在线</a>
+                </td>
+                <td>qm032173</td>
+                <td>岳星宇</td>
+                <td>wawzwacdl001</td>
+                <td>0.00</td>
+                <td>手机端: android </td>
+                <td>122.192.14.242中国|0|江苏省|南京市|联通</td>
+                <td>122.192.14.242中国|0|江苏省|南京市|联通</td>
+                <td>
+                    2023/4/25 2:52:51
+                </td>
+                <td>
+                    2023/4/25 2:52:50
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>Android</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=qm032173&id=243341&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=qm032173&id=243341&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/5056FB6FA3E92B14"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/5056FB6FA3E92B14"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=qm032173" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=qm032173&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=5056FB6FA3E92B14">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>36</td>
+                <td>
+                    <a href="#" id="BAF123C3703EFA30"
+                        onclick="return OffOnLine('BAF123C3703EFA30','a13316593278');">在线</a>
+                </td>
+                <td>a13316593278</td>
+                <td>王中原</td>
+                <td>wawzwacdl001</td>
+                <td>0.00</td>
+                <td>手机端: android </td>
+                <td>223.104.68.144中国|0|广东省|东莞市|移动</td>
+                <td>223.104.68.144中国|0|广东省|东莞市|移动</td>
+                <td>
+                    2023/4/25 2:52:48
+                </td>
+                <td>
+                    2023/4/25 2:52:48
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>Android</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=a13316593278&id=243340&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=a13316593278&id=243340&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/BAF123C3703EFA30"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/BAF123C3703EFA30"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=a13316593278" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=a13316593278&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=BAF123C3703EFA30">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>37</td>
+                <td>
+                    <a href="#" id="0604D60597EEF1BE" onclick="return OffOnLine('0604D60597EEF1BE','guo57817');">在线</a>
+                </td>
+                <td>guo57817</td>
+                <td>张婉婷</td>
+                <td>wawzwacdl001</td>
+                <td>0.00</td>
+                <td>PC端: www15631239156.2939n6.com/NewWeb </td>
+                <td>36.5.217.214(中国|0|安徽省|合肥市|电信)</td>
+                <td>36.5.217.214(中国|0|安徽省|合肥市|电信)</td>
+                <td>
+                    2023/4/25 2:52:42
+                </td>
+                <td>
+                    2023/4/25 2:52:42
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>PC</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=guo57817&id=243339&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=guo57817&id=243339&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/0604D60597EEF1BE"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/0604D60597EEF1BE"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=guo57817" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=guo57817&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=0604D60597EEF1BE">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>38</td>
+                <td>
+                    <a href="#" id="EC0A96DB06812DCC"
+                        onclick="return OffOnLine('EC0A96DB06812DCC','c781942580');">在线</a>
+                </td>
+                <td>c781942580</td>
+                <td>冉宝宝</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>218.26.54.214(中国|0|山西省|太原市|联通)</td>
+                <td>218.26.54.214(中国|0|山西省|太原市|联通)</td>
+                <td>
+                    2023/4/25 2:55:47
+                </td>
+                <td>
+                    2023/4/25 2:52:35
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=c781942580&id=243338&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=c781942580&id=243338&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/EC0A96DB06812DCC"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/EC0A96DB06812DCC"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=c781942580" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=c781942580&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=EC0A96DB06812DCC">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>39</td>
+                <td>
+                    <a href="#" id="94066A81E04AB95F" onclick="return OffOnLine('94066A81E04AB95F','xin46103');">在线</a>
+                </td>
+                <td>xin46103</td>
+                <td>吴云楚</td>
+                <td>wawzwacdl001</td>
+                <td>0.00</td>
+                <td>PC端: www15631239156.2939n6.com/NewWeb </td>
+                <td>183.141.144.126(中国|0|浙江省|嘉兴市|电信)</td>
+                <td>183.141.144.126(中国|0|浙江省|嘉兴市|电信)</td>
+                <td>
+                    2023/4/25 2:52:30
+                </td>
+                <td>
+                    2023/4/25 2:52:30
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>PC</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=xin46103&id=243337&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=xin46103&id=243337&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/94066A81E04AB95F"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/94066A81E04AB95F"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=xin46103" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=xin46103&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=94066A81E04AB95F">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>40</td>
+                <td>
+                    <a href="#" id="B87F6256E9AF4B22"
+                        onclick="return OffOnLine('B87F6256E9AF4B22','zyhdq38580');">在线</a>
+                </td>
+                <td>zyhdq38580</td>
+                <td>刘金玉</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i3.com/NewMobile </td>
+                <td>223.214.230.194(中国|0|安徽省|滁州市|电信)</td>
+                <td>223.214.230.194(中国|0|安徽省|滁州市|电信)</td>
+                <td>
+                    2023/4/25 2:52:20
+                </td>
+                <td>
+                    2023/4/25 2:52:20
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=zyhdq38580&id=243336&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=zyhdq38580&id=243336&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/B87F6256E9AF4B22"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/B87F6256E9AF4B22"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=zyhdq38580" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=zyhdq38580&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=B87F6256E9AF4B22">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>41</td>
+                <td>
+                    <a href="#" id="CE35BA5082D3639C"
+                        onclick="return OffOnLine('CE35BA5082D3639C','pkgah58453');">在线</a>
+                </td>
+                <td>pkgah58453</td>
+                <td>阿布阿呷</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i3.com/NewMobile </td>
+                <td>223.214.231.44(中国|0|安徽省|滁州市|电信)</td>
+                <td>223.214.231.44(中国|0|安徽省|滁州市|电信)</td>
+                <td>
+                    2023/4/25 2:52:16
+                </td>
+                <td>
+                    2023/4/25 2:52:16
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=pkgah58453&id=243335&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=pkgah58453&id=243335&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/CE35BA5082D3639C"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/CE35BA5082D3639C"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=pkgah58453" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=pkgah58453&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=CE35BA5082D3639C">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>42</td>
+                <td>
+                    <a href="#" id="65970C580908B98A" onclick="return OffOnLine('65970C580908B98A','guo31789');">在线</a>
+                </td>
+                <td>guo31789</td>
+                <td>祁佳</td>
+                <td>wawzwacdl001</td>
+                <td>0.00</td>
+                <td>PC端: www15631239156.2939n6.com/NewWeb </td>
+                <td>140.250.153.72(中国|0|山东省|莱芜市|电信)</td>
+                <td>140.250.153.72(中国|0|山东省|莱芜市|电信)</td>
+                <td>
+                    2023/4/25 2:52:10
+                </td>
+                <td>
+                    2023/4/25 2:52:10
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>PC</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=guo31789&id=243334&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=guo31789&id=243334&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/65970C580908B98A"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/65970C580908B98A"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=guo31789" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=guo31789&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=65970C580908B98A">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>43</td>
+                <td>
+                    <a href="#" id="AC8C42599CCEAA00" onclick="return OffOnLine('AC8C42599CCEAA00','ig12345');">在线</a>
+                </td>
+                <td>ig12345</td>
+                <td>侯红英</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>113.247.111.189(中国|0|湖南省|长沙市|电信)</td>
+                <td>113.247.111.189(中国|0|湖南省|长沙市|电信)</td>
+                <td>
+                    2023/4/25 2:55:38
+                </td>
+                <td>
+                    2023/4/25 2:52:10
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=ig12345&id=243333&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=ig12345&id=243333&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/AC8C42599CCEAA00"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/AC8C42599CCEAA00"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=ig12345" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=ig12345&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=AC8C42599CCEAA00">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>44</td>
+                <td>
+                    <a href="#" id="00DF029BB1968DC8" onclick="return OffOnLine('00DF029BB1968DC8','aa989111');">在线</a>
+                </td>
+                <td>aa989111</td>
+                <td>房帅</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>123.189.100.121(中国|0|辽宁省|鞍山市|联通)</td>
+                <td>123.189.100.121(中国|0|辽宁省|鞍山市|联通)</td>
+                <td>
+                    2023/4/25 2:51:58
+                </td>
+                <td>
+                    2023/4/25 2:51:58
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=aa989111&id=243332&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=aa989111&id=243332&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/00DF029BB1968DC8"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/00DF029BB1968DC8"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=aa989111" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=aa989111&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=00DF029BB1968DC8">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>45</td>
+                <td>
+                    <a href="#" id="5F780AD8ED0A483E" onclick="return OffOnLine('5F780AD8ED0A483E','zzx200515');">在线</a>
+                </td>
+                <td>zzx200515</td>
+                <td>张子鑫</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>106.119.201.106(中国|0|河北省|唐山市|电信)</td>
+                <td>106.119.201.106(中国|0|河北省|唐山市|电信)</td>
+                <td>
+                    2023/4/25 2:51:57
+                </td>
+                <td>
+                    2023/4/25 2:51:57
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=zzx200515&id=243331&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=zzx200515&id=243331&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/5F780AD8ED0A483E"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/5F780AD8ED0A483E"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=zzx200515" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=zzx200515&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=5F780AD8ED0A483E">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>46</td>
+                <td>
+                    <a href="#" id="C0DF3130784C3033" onclick="return OffOnLine('C0DF3130784C3033','fu59880');">在线</a>
+                </td>
+                <td>fu59880</td>
+                <td>陈凤</td>
+                <td>wawzwacdl001</td>
+                <td>0.00</td>
+                <td>PC端: www15631239156.2939n6.com/NewWeb </td>
+                <td>218.24.54.49(中国|0|辽宁省|锦州市|联通)</td>
+                <td>218.24.54.49(中国|0|辽宁省|锦州市|联通)</td>
+                <td>
+                    2023/4/25 2:51:41
+                </td>
+                <td>
+                    2023/4/25 2:51:41
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>PC</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=fu59880&id=243330&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=fu59880&id=243330&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/C0DF3130784C3033"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/C0DF3130784C3033"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=fu59880" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=fu59880&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=C0DF3130784C3033">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>47</td>
+                <td>
+                    <a href="#" id="54C27ECC738BC9EF" onclick="return OffOnLine('54C27ECC738BC9EF','hu292153');">在线</a>
+                </td>
+                <td>hu292153</td>
+                <td>胡建才</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: android </td>
+                <td>183.199.102.25中国|0|河北省|承德市|移动</td>
+                <td>183.199.102.25中国|0|河北省|承德市|移动</td>
+                <td>
+                    2023/4/25 2:51:20
+                </td>
+                <td>
+                    2023/4/25 2:51:20
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>Android</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=hu292153&id=243329&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=hu292153&id=243329&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/54C27ECC738BC9EF"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/54C27ECC738BC9EF"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=hu292153" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=hu292153&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=54C27ECC738BC9EF">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>48</td>
+                <td>
+                    <a href="#" id="C75653E8B8E1E3C7" onclick="return OffOnLine('C75653E8B8E1E3C7','qwe999ty');">在线</a>
+                </td>
+                <td>qwe999ty</td>
+                <td>陈承达</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>171.111.80.17(中国|0|广西|南宁市|电信)</td>
+                <td>171.111.80.17(中国|0|广西|南宁市|电信)</td>
+                <td>
+                    2023/4/25 2:51:07
+                </td>
+                <td>
+                    2023/4/25 2:51:07
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=qwe999ty&id=243328&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=qwe999ty&id=243328&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/C75653E8B8E1E3C7"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/C75653E8B8E1E3C7"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=qwe999ty" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=qwe999ty&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=C75653E8B8E1E3C7">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>49</td>
+                <td>
+                    <a href="#" id="BE268A1A39A4AC8C" onclick="return OffOnLine('BE268A1A39A4AC8C','zzaazz11');">在线</a>
+                </td>
+                <td>zzaazz11</td>
+                <td>施翔</td>
+                <td>sms888</td>
+                <td>0.00</td>
+                <td>手机端: 2939i1.com/NewMobile </td>
+                <td>203.93.167.21(中国|0|宁夏|银川市|联通)</td>
+                <td>203.93.167.21(中国|0|宁夏|银川市|联通)</td>
+                <td>
+                    2023/4/25 2:50:58
+                </td>
+                <td>
+                    2023/4/25 2:50:58
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>H5</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=zzaazz11&id=243327&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=zzaazz11&id=243327&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/BE268A1A39A4AC8C"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/BE268A1A39A4AC8C"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=zzaazz11" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=zzaazz11&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=BE268A1A39A4AC8C">资金 </a>
+
+                </td>
+            </tr>
+            <tr class="m_cen">
+                <td>50</td>
+                <td>
+                    <a href="#" id="7D23FB8FB11A1C4F" onclick="return OffOnLine('7D23FB8FB11A1C4F','ji76576');">在线</a>
+                </td>
+                <td>ji76576</td>
+                <td>陈静云</td>
+                <td>wawzwacdl001</td>
+                <td>0.00</td>
+                <td>PC端: www15631239156.2939n6.com/NewWeb </td>
+                <td>171.9.110.7(中国|0|河南省|三门峡市|电信)</td>
+                <td>171.9.110.7(中国|0|河南省|三门峡市|电信)</td>
+                <td>
+                    2023/4/25 2:50:38
+                </td>
+                <td>
+                    2023/4/25 2:50:37
+
+                    <br /><span>手机:无</span>
+                </td>
+                <td>
+                    停用
+                </td>
+                <td>
+                    <span>PC</span>
+                </td>
+                <td>
+                    <img src="/images/control/us0.png" title="当前状态:启用" />
+                    <a href="/VIP/CutStatus?UserName=ji76576&id=243326&status=1"><img src="/images/control/q1.png"
+                            title="暂停" /></a>
+                    <a href="/VIP/CutStatus?UserName=ji76576&id=243326&status=2"><img src="/images/control/q2.png"
+                            title="停止" /></a>
+                </td>
+                <td align="center">
+                    <a href="/VIP/Modify/7D23FB8FB11A1C4F"> 修改 </a><b>/</b>
+                    <a href="/VIP/Personal_information/7D23FB8FB11A1C4F"> 资料 </a><b>/</b>
+                    <a href="/VIP/VipBankAccount?username=ji76576" target="_blank"> 银行卡 </a><b>/</b>
+                    <a
+                        href="/VIP/VIPSpSearch?name=ji76576&company=C2837BDEF46C5916F532FD63368A9A57&gameType=AgGame&requestTyp=1">
+                        下注 </a><b>/</b>
+                    <a href="/VIP/VipBalance?userid=7D23FB8FB11A1C4F">资金 </a>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="display:block;height:38px;float: left;width: 100%;">&nbsp;</div>
+    <div id="page1" class="bottomNav" style="margin-top:5px; text-align:center;"></div>
+
+    <script src="/bundles/Layer/laypage?v=lNDYBXXe7hEjWKQNpjJN8ZtZeYR1rg3ieRCwKZK-POQ1"></script>
+
+    <link href="/bundles/Layer/css?v=e2fA0wTPAd1w4OJwPUWmZMRi5m0Hxlq0O4t0IyOUAxY1" rel="stylesheet" />
+
+    <link href="/Scripts/layer/skin/layer.css?v=6b_YASglIWmK51UpZOZPw3d4DB_CLpwtR95HWs_vp2c1" rel="stylesheet" />
+
+    <link href="/Scripts/laydate/skins/dahong/laydate.css?v=te-rhBiL7VskRyIxQY3QR3YpwuuyxljoHxAY2gRuhhs1"
+        rel="stylesheet" />
+
+    <script type="text/javascript">
+        $(function () {
+            laydate.skin('dahong');
+        });
+        $(function () {
+            switch ($("#SearchSelect").val()) {
+                case "RealName":
+                    $("#IsFuzzyquery").show()
+                    break;
+                case "Bank_Type":
+                    $("#IsFuzzyquery").show()
+                    break;
+                default:
+                    $("#IsFuzzyquery").hide()
+                    break;
+            }
+            $("#SearchSelect").change(function () {
+                switch ($(this).val()) {
+                    case "RealName":
+                        $("#IsFuzzyquery").show()
+                        break;
+                    case "Bank_Type":
+                        $("#IsFuzzyquery").show()
+                        break;
+                    default:
+                        $("#IsFuzzyquery").hide()
+                        break;
+                }
+            })
+            laypage({
+                cont: 'page1',
+                pages: '4832', //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
+                skip: true,
+                skin: '#AF0000',
+                curr: function () { //通过url获取当前页，也可以同上（pages）方式获取
+                    var page = location.search.match(/page=(\d+)/);
+                    return page ? page[1] : 1;
+                }(),
+                jump: function (e, first) { //触发分页后的回调
+                    if (e.curr <= '4832') {
+                        if (!first) { //一定要加此判断，否则初始时会无限刷新
+                            location.href = '?page=' + e.curr + '&type=1';
+                        }
+                    }
+                }
+            });
+
+        })
+    </script>
+    <script type="text/javascript">
+        function OffOnLine(Id, name) {
+            var a = $("#Company  option:selected").val();
+
+            if (confirm("你确认要踢" + name + "下线吗？")) {
+                $.ajax({
+                    url: "/VIP/OffOnLine?Id=" + Id + "&co=" + a,
+                    dataType: "json",
+                    cache: false,
+                    data: null,
+                    type: "GET",
+                    success: function (data) {
+                        if (data) {
+                            $("#" + Id).text("離線");
+                            $("#" + Id).attr('style', 'color:#837d7d');
+                            $("#" + Id).removeAttr('onclick');
+                            $("#" + Id).removeAttr('href');
+                        }
+                        else
+                            alert('踢线失败！');
+                    }
+                })
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
